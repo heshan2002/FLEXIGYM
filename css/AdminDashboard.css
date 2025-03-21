@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* Admin Dashboard Background color */
+.adminDashboard{
+  background-color: #f2f3fa;
+}
+
+/*Admin Left Side Navigation Bar*/  
+  .adminnav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#130C46;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  .adminnav h3{
+    padding: 1px 8px 1px 6px;
+    margin: 30px 0 20px 0;
+    text-decoration: none;
+    font-size: 40px;
+    color: #ffffff;
+    display: block;
+  }
+  
+  .adminnav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    color: white; 
+  }
+  
+  .adminnav h2{
+    font-size: 40px;
+  }
+  .adminnav a:hover {
+    color: #f1f1f1;
+    background-color: #686BD1;
+  }
+ 
+  /* logout button and profile image */
+  .row-ad3{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px;
+  }
+
+
+  .header-title {
+    font-weight: bold;
+  }
+
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+  }
+
+  /* Log Out Button */
+  .logout-btn{
+    border-radius: 8px;
+    background-color: rgb(251, 8, 8);
+    text-decoration: none;
+    padding: 8px 20px;
+    margin:25px 5px 5px 5px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .logout-btn a{
+    text-decoration:none;   
+    color:white;
+  }
+
+
+  .logout-btn:hover {
+    background-color:rgb(147, 4, 14);
+  }
+
+
+/* Admin Profile Image   */
+  .Profile-img{
+    margin:25px 5px 5px 5px;
+  }
+
+
+/* --------------------------------------- */
+  .adminmain {
+    margin-left: 250px; 
+    font-size: 30px; 
+    padding: 0px 10px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .adminnav {padding-top: 15px;}
+    .adminnav a {font-size: 18px;}
+  }
+
+  /* Admin Dashboard card css */
+  .admincard {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 300px;
+    height: 170px;
+    border-radius: 20px;
+    margin: 30px 20px 40px 20px;
+    padding: 3px 3px 4px 9px;
+  }
+  
+  .admincard:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    color: blue;
+  }
+  
+  .admincontainer {
+    margin: 0.5px;
+    padding: 0.5px;
+  }
+
+  .admincontainer a{
+    color:black;
+    text-decoration: none;
+  }
+
+  .admincard a:hover {
+    color: blue;
+  }
+
+  .admincontainer h4{
+    margin: 20px 10px 2px 20px;
+  }
+
+  .admincontainer h4 b{
+    margin-left: 10px;
+  }
+
+  .admincontainer p{
+    margin: 20px 20px 2px 65px;
+  }
+
+  .admincontainer hr{
+    width: 200px;
+  }
+
+  .row-ad1 {
+    display: flex;
+    margin: 30px 30px 40px 60px;
+  }
+
+  .row-ad2 {
+    display: flex;
+    margin: 30px 30px 30px 60px;
+  }
+  
+  .col-ad1 {
+    flex: 40%;
+  }
+
+  .col-ad2{
+    flex: 40%;
+  }
+
+  .col-ad3{
+    flex: 40%;
+  }
+  
+
+   
