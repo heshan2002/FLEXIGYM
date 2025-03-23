@@ -1,0 +1,123 @@
+.myprofile {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    background: url('../img/UserProfileBackground.jpeg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 30%;
+    background: #dbd7d7;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.profile h2 {
+    margin: 10px 0;
+}
+
+.details p {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.profile-btn {
+    background: #130C46;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.main-content {
+    width: 70%;
+    padding: 20px;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+}
+
+.tab:hover {
+    color: white;
+}
+
+.tab.active {
+    border-bottom: 3px solid rgb(88, 101, 197);
+    color: rgb(104, 122, 201);
+}
+
+.tab-content {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: white;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.edit-btn {
+    background: #130C46;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    border-radius: 5px;
+    margin-top:15px;
+    margin-left:35%;
+}
