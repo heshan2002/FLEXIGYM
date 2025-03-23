@@ -2403,3 +2403,24 @@ ol {
 		font-size: 20px;
 	}
 }
+
+
+
+.logout-container {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.logout-btn {
+    background: #ff4d4d;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    background: #cc0000;
+}

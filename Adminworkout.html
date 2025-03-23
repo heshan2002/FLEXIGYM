@@ -5,11 +5,13 @@
 <link rel="stylesheet" href="css/AdminDashboard.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/AdminworkoutT.css">
+<script src="js/Adminassigntrainer.js" defer></script>
 </head>
 
 <body class="adminDashboard">    
 
-
+<!--Admin Left Side Navigation Bar-->  
 <div class="adminnav">
 
   <h3 ><center>Admin</center></h3>
@@ -37,45 +39,43 @@
   </div>
   <hr>
 
-  <!--Admin Dashboard Cards-->
-  <!--Row 1-->
-  <div class="row-ad1">
-    <div class="col-ad1">
-    <div class="admincard">
-        <div class="admincontainer">
 
-          <a href="AdminPassengers.php"><h4><i class='fa fa-users'></i><b>Members</b></h4></a>
-          <p><b>10</b></p> 
-          <hr>
-          
-        </div> <!--admincontainer-->
-      </div> <!--admincard-->
-    </div> <!--col-ad1-->
 
-    <div class="col-ad2">
-      <div class="admincard">
-        <div class="admincontainer">
-
-          <a href="AdminFlights.php"><h4><i class='fa fa-user-tie' ></i><b>Trainers</b></h4></a>
-          <p><b>15</b></p> 
-          <hr>
-        </div> <!--admincontainer-->
-      </div> <!--admincard-->
-    </div> <!--col-ad2-->
+<div class="container">
+    <h2>Workouts</h2>
+    <input type="text" placeholder="Type here to find" class="search-box">
     
-    <div class="col-ad3">
-      <div class="admincard">
-        <div class="admincontainer">
-    
-          <a href="AdminSchedule.php"><h4><i class="fa fa-book"></i><b>Plans</b></h4></a> 
-          <p><b>2</b></p> 
-          <hr>
-
-        </div> <!--admincontainer-->
-      </div> <!--admincard-->
-    </div> <!--col-ad3-->
-  </div> <!--row-ad1-->
- 
+    <table>
+        <thead>
+            <tr>
+                <th>Member Name</th>
+                <th>Trainer Name</th>
+                <th>Workout Date</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>AAAAAAA ⭐</td>
+                <td>BBBBBBB</td>
+                <td>CCCCCC</td>
+                <td><button class="edit-btn">EDIT</button></td>
+                <td><button class="delete-btn">DELETE</button></td>
+                <td>Completed</td>
+            </tr>
+            <tr>
+                <td>AAAAAAA ⭐</td>
+                <td>BBBBBBB</td>
+                <td>CCCCCC</td>
+                <td><button class="edit-btn">EDIT</button></td>
+                <td><button class="delete-btn">DELETE</button></td>
+                <td>Completed</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 </div> <!--adminmain-->
 
 </body>

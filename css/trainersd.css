@@ -1,0 +1,56 @@
+.trainer-details-container {
+    text-align: center;
+    margin: 20px auto;
+    width: 50%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(7, 1, 66, 0.233);
+}
+.trainer-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 2px solid #13117c;
+}
+.trainer-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.trainer-info {
+    text-align: left;
+}
+.availability {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background: green;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+.chat-box {
+    margin-top: 20px;
+    padding: 10px;
+    background: #0c0458;
+    border-radius: 10px;
+}
+.chat-box textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: none;
+}
+.ctext{
+    color: white;
+}

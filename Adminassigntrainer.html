@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="css/AdminDashboard.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/AdminworkoutT.css">
+
 </head>
 
 <body class="adminDashboard">    
@@ -37,46 +39,54 @@
   </div>
   <hr>
 
-  <!--Admin Dashboard Cards-->
-  <!--Row 1-->
-  <div class="row-ad1">
-    <div class="col-ad1">
-    <div class="admincard">
-        <div class="admincontainer">
 
-          <a href="AdminPassengers.php"><h4><i class='fa fa-users'></i><b>Members</b></h4></a>
-          <p><b>10</b></p> 
-          <hr>
-          
-        </div> <!--admincontainer-->
-      </div> <!--admincard-->
-    </div> <!--col-ad1-->
+<div class="container">
+    <h2>Assign Trainer</h2>
+    <p>Assigned Members Count: 2</p>
+    <input type="text" placeholder="Type here to find" class="search-box">
 
-    <div class="col-ad2">
-      <div class="admincard">
-        <div class="admincontainer">
+    <table>
+        <thead>
+            <tr>
+                <th>Availability</th>
+                <th>Trainer Name</th>
+                <th>Email</th>
+                <th>Specialty</th>
+                <th>Delete</th>
+                <th>Assign to Member</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="status green"></span></td>
+                <td>BBBBBBB</td>
+                <td>CCCCCC</td>
+                <td>EEEEE</td>
+                <td><button class="delete-btn">DELETE</button></td>
+                <td><button class="assign-btn">ASSIGN</button></td>
+            </tr>
+            <tr>
+                <td><span class="status red"></span></td>
+                <td>BBBBBBB</td>
+                <td>CCCCCC</td>
+                <td>EEEEE</td>
+                <td><button class="delete-btn">DELETE</button></td>
+                <td><button class="assign-btn">ASSIGN</button></td>
+            </tr>
+        </tbody>
+    </table>
 
-          <a href="AdminFlights.php"><h4><i class='fa fa-user-tie' ></i><b>Trainers</b></h4></a>
-          <p><b>15</b></p> 
-          <hr>
-        </div> <!--admincontainer-->
-      </div> <!--admincard-->
-    </div> <!--col-ad2-->
-    
-    <div class="col-ad3">
-      <div class="admincard">
-        <div class="admincontainer">
-    
-          <a href="AdminSchedule.php"><h4><i class="fa fa-book"></i><b>Plans</b></h4></a> 
-          <p><b>2</b></p> 
-          <hr>
+</div>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h3>Add Member</h3>
+            <ul>
+                <li>CCCCCC ⭐ <button class="add-btn">ADD</button></li>
+                <li>DDDDDD 🌟 <button class="add-btn">ADD</button></li>
+            </ul>
+        </div>
+    </div>
 
-        </div> <!--admincontainer-->
-      </div> <!--admincard-->
-    </div> <!--col-ad3-->
-  </div> <!--row-ad1-->
- 
-</div> <!--adminmain-->
-
+    <script src="js/Adminassigntrainer.js"></script>
 </body>
 </html> 

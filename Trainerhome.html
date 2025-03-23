@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer Dashboard</title>
+    <link rel="stylesheet" href="css/trainerhome.css">
+</head>
+<body>
+
+    <div class="dashboard">
+        <h1 class="dashboard-title">Trainer Dashboard</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Member Name</th>
+                    <th>Unread Messages</th>
+                    <th>Reply</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AAAAAAAA</td>
+                    <td>
+                        BBBBBBBBBBBB<br>
+                        BBBBBBBBBBBB<br>
+                        BBBBBBBBBBBB<br>
+                        BBB
+                    </td>
+                    <td>
+                        <button class="reply-btn" onclick="openPopup()">Reply</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+ <!-- Reply Message Popup -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <textarea id="reply-message" placeholder="Type Here...."></textarea>
+        <div class="popup-buttons">
+            <button onclick="sendMessage()">SEND</button>
+            <button onclick="closePopup()" class="cancel-btn">CANCEL</button>
+        </div>
+    </div>
+</div>
+
+
+    <script src="js/trainerm.js"></script>
+
+</body>
+</html>

@@ -8,43 +8,43 @@
 </head>
 <body class="user-signup">
     <div class="signup-container">
-        <form class="signup-form">
+        <form action="php/register.php" method="POST">
             <h2 class="signup-title">Create Account</h2>
-           
+
             <h3 class="signup-section-title">-- Personal Details --</h3>
             <div class="signup-row">
                 <div class="signup-column">
                     <label>Full Name *</label>
-                    <input type="text" placeholder="First Name" required>
+                    <input type="text" name="fullname" placeholder="Full Name" required>
                 </div>
                 <div class="signup-column">
                     <label>Email *</label>
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" name="email" placeholder="Email" required>
                 </div>
             </div>
 
             <div class="signup-row">
                 <div class="signup-column">
                     <label>Phone Number *</label>
-                    <input type="text" placeholder="Phone Number" required>
+                    <input type="text" name="phone" placeholder="Phone Number" required>
                 </div>
                 <div class="signup-column">
                     <label>Password *</label>
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required>
                 </div>
             </div>
 
             <div class="signup-row">
                 <div class="signup-column">
                     <label>Date of Birth *</label>
-                    <input type="date" required>
+                    <input type="date" name="dob" required>
                 </div>
                 <div class="signup-column">
                     <label>Gender *</label>
-                    <select required>
-                        <option>--select--</option>
-                        <option>Male</option>
-                        <option>Female</option>
+                    <select name="gender" required>
+                        <option value="">--select--</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                     </select>
                 </div>
             </div>
@@ -52,85 +52,82 @@
             <h3 class="signup-section-title">-- Fitness Details --</h3>
             <div class="signup-row">
                 <div class="signup-column">
-                    <label>Height</label>
-                    <input type="text" placeholder="Height (cm)" required>
+                    <label>Height (cm) *</label>
+                    <input type="text" name="height" placeholder="Height (cm)" required>
                 </div>
                 <div class="signup-column">
-                    <label>Weight</label>
-                    <input type="text" placeholder="Weight (kg)" required>
+                    <label>Weight (kg) *</label>
+                    <input type="text" name="weight" placeholder="Weight (kg)" required>
                 </div>
             </div>
 
             <div class="signup-row">
                 <div class="signup-column">
-                    <label>Body Fat Percentage</label>
-                    <select>
-                        <option>--select--</option>
-                        <option>Essential Fat    5-13%</option>
-                        <option>Athlete Fat  14-20%</option>
-                        <option>Fitness Fat 25-31%</option>
-                        <option>Obese Fat 32% Above </option>
-                    </select>
+                    <label>Body Fat Percentage *</label>
+                    <input type="text" name="body_fat" placeholder="Body Fat (%)" required>
                 </div>
                 <div class="signup-column">
-                    <label>Muscle Mass</label>
-                    <select>
-                        <option>--select--</option>
-                        <option>Very Height 50%</option>
-                        <option>Height 40-50%</option>
-                        <option>Moderate 40-44%</option>
-                        <option>Low 35-39%</option>
-                        <option>Very Low 35% Below</option>
+                    <label>Muscle Mass (%) *</label>
+                    <input type="text" name="muscle_mass" placeholder="Muscle Mass (%)" required>
+                </div>
+            </div>
+
+            <div class="signup-row">
+                <div class="signup-column">
+                    <label>Current Fitness Level *</label>
+                    <select name="fitness_level" required>
+                        <option value="">--select--</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </div>
+                
+                    <div class="signup-column">
+                        <label>Fitness Goal *</label>
+                        <select name="fitness_goal" required>
+                            <option value="">--select--</option>
+                            <option value="Weight Loss">Weight Loss</option>
+                            <option value="Muscle Gain">Muscle Gain</option>
+                            <option value="Strength">Strength</option>
+                            <option value="General Fitness">General Fitness</option>
+                        </select>
+                    </div>
+                
+                
+                <div class="signup-column">
+                    <label>Preferred Workout Time *</label>
+                    <select name="workout_time" required>
+                        <option value="">--select--</option>
+                        <option value="Morning">Morning</option>
+                        <option value="Afternoon">Afternoon</option>
+                        <option value="Evening">Evening</option>
                     </select>
                 </div>
             </div>
 
             <div class="signup-row">
                 <div class="signup-column">
-                    <label>Current Fitness Level</label>
-                    <select>
-                        <option>--select--</option>
-                        <option>Beginner</option>
-                        <option>Intermediate</option>
-                        <option>Advanced</option>
+                    <label>Equipment Availability *</label>
+                    <select name="equipment_available" required>
+                        <option value="">--select--</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
                 <div class="signup-column">
-                    <label>Fitness Preferred Workout Time</label>
-                    <select>
-                        <option>--select--</option>
-                        <option>Morning</option>
-                        <option>Afternoon</option>
-                        <option>Evening</option>
+                    <label>Trainer Preference *</label>
+                    <select name="trainer_preference" required>
+                        <option value="">--select--</option>
+                        <option value="Male Trainer">Male Trainer</option>
+                        <option value="Female Trainer">Female Trainer</option>
+                        <option value="Any">No Preference</option>
                     </select>
                 </div>
             </div>
 
-            <div class="signup-row">
-                <div class="signup-column">
-                    <label>Equipment Availability</label>
-                    <select>
-                        <option>--select--</option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </select>
-                </div>
-                <div class="signup-column">
-                    <label>Trainer Preference</label>
-                    <select>
-                        <option>--select--</option>
-                        <option>Male Trainer</option>
-                        <option>Female Trainer</option>
-                        <option>No Preference</option>
-                    </select>
-                </div>
-            </div>
-        
-            <div class="signup-button-container">
             <button type="submit" class="signup-submit-button">Sign Up</button>
-
             <p class="signup-login-link">Already have an account? <a href="Login.html">Log In</a></p>
-        </div>
         </form>
     </div>
 </body>
