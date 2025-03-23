@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* Admin Dashboard Background color */
+.adminDashboard{
+  background-color: #f2f3fa;
+}
+
+
+/*Admin Left Side Navigation Bar*/  
+  .adminnav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#130C46;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+ 
+  .adminnav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    color: white;
+  }
+  
+  .adminnav h3{
+    padding: 1px 8px 1px 6px;
+    margin: 30px 0 20px 0;
+    text-decoration: none;
+    font-size: 40px;
+    color: #ffffff;
+    display: block;
+  }
+  .adminnav a:hover {
+    color: #f1f1f1;
+    background-color: #686BD1;
+  }
+
+  .adminUsers {
+    margin-left: 250px; 
+    font-size: 30px; 
+    padding: 0px 10px;
+  }
+
+  /* Report Generation Button */
+  .report-btn{
+    border-radius: 8px;
+    background-color: #130C46;
+    text-decoration: none;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    color:white;
+  }
+
+  .report-btn a{
+    text-decoration:none;   
+    color:white;
+  }
+
+
+  .report-btn:hover {
+    background-color:#0008e8;
+  }
+
+
+  /* Search Box */
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+  }
+
+  #member-search {
+      padding: 5px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  }
+
+  .search-icon {
+      padding: 5px 10px;
+      font-size: 14px;
+      background-color: #130C46;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+  .search-icon:hover {
+      background-color:#0008e8;
+  }
+
+
+
+  /* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+  table {
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 16px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+/* View Button */
+  .view-btn{
+    border-radius: 8px;
+    background-color: #069433;
+    text-decoration: none;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .view-btn a{
+    text-decoration:none;   
+    color:white;
+  }
+
+
+  .view-btn:hover {
+    background-color:rgb(4, 99, 5);
+  }
+
+/* Delete Button */
+  .delete-btn{
+    border-radius: 8px;
+    background-color:rgb(251, 8, 8);
+    text-decoration: none;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .delete-btn a{
+    text-decoration:none;   
+    color:white;
+  }
+
+
+  .delete-btn:hover {
+    background-color:rgb(147, 4, 14);
+  }
+
+
+
+  /* View Button */
+
+  .overlay{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;;
+    background:rgba(0,0,0,0.8);
+    transition:opacity 500ms;
+    visibility:hidden;
+    opacity:0;
+  }
+
+  .overlay:target{
+    visibility:visible;
+    opacity:1;
+  }
+
+  .wrapper{
+    margin:70px auto;
+    padding:20px;
+    background:#e7e7e7;
+    border-radius:5px;
+    width:30%;
+    position:relative;
+    transition:all 5s ease-in-out;
+  }
+
+  .wrapper h3{
+    margin:0;
+    color:#333;
+    font-size:30px;
+    text-align:center;
+    margin-bottom: 25px;
+  }
+
+  .wrapper .close{
+    position: absolute;
+    top:20px;
+    right:30px;
+    transition:all 200ms;
+    font-size:30px;
+    font-weight:bold;
+    text-decoration:none;
+    color:#333;
+  }
+
+  .wrapper .trainer-content{
+    max-height: 100%;
+    overflow:auto;
+    font-size:20px;
+  }
+
+
+
+  /* --------------------View Member Profile------------------- */
+.container {
+  display: flex;
+  width: 50%;
+  margin: 40px auto;
+  background: #dbd7d7;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px #dbd7d7;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 30%;
+  background:#686BD1;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  text-align: center;
+  border-right: 1px solid #ddd;
+  
+}
+
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile h2 {
+  margin: 10px 0;
+}
+
+.profile h2 {
+  margin: 10px 0;
+}
+
+.details h5 {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 0;
+}
+
+.main-content {
+  width: 70%;
+  padding: 20px;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+}
+
+.tab:hover {
+  color: black;
+}
+
+.tab.active {
+  border-bottom: 3px solid rgb(88, 101, 197);
+  color: rgb(104, 122, 201);
+}
+
+.tab-content {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: black;
+  font-size:15px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.back-btn {
+  background: #130C46;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.3s ease-out;
+  margin-left:175px;
+}
+
+.back-btn a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}

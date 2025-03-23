@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/AdminMembers.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script> 
+</head>
+
+<body class="adminDashboard">
+
+  <!--Admin Left Side Navigation Bar-->  
+  <div class="adminnav">
+
+  <h3 ><center>Admin</center></h3>
+  <h3 style='color:#397FFF;'><center>FLEXIGYM</center></h3>
+
+  <center><hr style="width:90%;text-align:center;margin-left:0"></center>
+
+  <a href="AdminDashboard.html"><i class='fas fa-house-user' style='margin: 15px 10px 15px 15px;'></i>Dashboard</a>
+  <a href="AdminMembers.html"><i class='fa fa-users' style='margin: 15px 10px 15px 15px;'></i>Members</a>
+  <a href="AdminTrainers.html"><i class="fa fa-user-tie" style="margin: 15px 10px 15px 15px;"></i>Trainers</a>
+  <a href="#"><i class='fa fa-dumbbell' style='margin: 15px 10px 15px 15px;'></i>Workouts</a>
+  <a href="#"><i class='fa fa-user' style='margin: 15px 10px 15px 15px;' ></i>Asign Trainers</a>
+  <a href="#"><i class='fa fa-book' style='margin: 15px 10px 15px 15px;' ></i>Plans</a>
+  <a href="#"><i class='fa fa-user-circle-o' style='margin: 15px 10px 15px 15px;' ></i>Profile</a>
+ 
+</div> <!--adminnav-->
+
+    <div class="adminUsers">
+    <h3>Members</h3>
+    <hr>
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <!--Report Generation Button-->
+      <div>
+          <button class="report-btn">Generate Report</button>
+      </div>
+  
+      <!--Search Box-->
+      <div class="search-container">
+          <input type="search" id="member-search" name="q" placeholder="Search...">
+          <button class="search-icon">Search</button>
+      </div>
+  </div>
+
+    <!--Registers Users Table-->
+    
+    <table>
+      <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Membership Type</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    <tr>
+        <!-- <th scope="row"></th> -->
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+        
+
+
+          <!-- View Button -->
+          <button class="view-btn"><a href="#viewmember">View</a></button>
+
+          <div class="overlay" id="viewmember">
+            <div class="viewwrapper">
+               <a href="#" class="close">&times;</a>
+               <div class="trainer-content">
+                <div class="trainer-container">
+                  <div class="container">
+                    <div class="sidebar">
+                        <div class="profile">
+                            <img src="../img/Admin.jpg" alt="Profile Picture">
+                            <h2>Member</h2>
+                            <p>Name</p>
+                            <div class="details">
+                                <h5>Email: <span></span></h5>
+                                <h5>Phone No: <span></span></h5>
+                                <h5>DOB: <span></span></h5>
+                                <h5>Gender: <span></span></h5>
+                                <h5>Membership Type: <span></span></h5>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="main-content">
+                        <div class="tabs">
+                            <button class="tab active" data-tab="account">ACCOUNT</button>
+                        </div>
+            
+                        <div class="tab-content" id="tab-content">
+                            <div class="form-group">
+                                <label>Height</label>
+                                <input type="text" value="">
+                            </div>
+                            <div class="form-group">
+                                <label>Weight</label>
+                                <input type="text" value="">
+                            </div>
+                            <div class="form-group">
+                                <label>Body Fat Percentage</label>
+                                <input type="text" value="">
+                            </div>
+                            <div class="form-group">
+                                <label>Muscle Mass</label>
+                                <input type="text" value="">
+                            </div>
+                            <div class="form-group">
+                                <label>Current Fitness Level</label>
+                                <input type="text" value="">
+                            </div>
+                            <div class="form-group">
+                                <label>Preferrend Workout Time</label>
+                                <input type="email" value="">
+                            </div>
+                            
+                            <button class="back-btn"><a href="AdminMembers.html">Back</a></button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+        <button class="delete-btn"><a href="#">Delete</a></button>
+        </td>
+        </tr>
+      
+    </table>
+  </div> 
+
+</body>   
+</html>
