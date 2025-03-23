@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -7,7 +11,7 @@
     <meta name="keywords" content="TopGym, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Elements | Template</title>
+    <title>Contact | Template</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,700,900" rel="stylesheet">
@@ -20,8 +24,6 @@
     <link rel="stylesheet" href="css/barfiller.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/myworkout.css" type="text/css">
-    <link rel="stylesheet" href="css/trainersd.css" type="text/css">
 </head>
 
 <body>
@@ -42,13 +44,19 @@
                         </div>
                         <nav class="mobile-menu">
                             <ul>
-                                <li><a href="./index.html">Home</a></li>
-                                <li><a href="./about-us.html">About us</a></li>
-                                <li><a href="./Plans.html">PLANS</a></li>
-                                <li><a href="./Trainers.html">TRAINERS</a></li>
-                                <li><a href="./Progress.html">PROGRESS</a></li>
-                                <li><a href="./contact.html">Contact</a></li>
+                                <li><a href="./index.php">Home</a></li>
+                                <li><a href="./about-us.php">About us</a></li>
+                                <li><a href="./Plans.php">PLANS</a></li>
+                                <li><a href="./Trainers.php">MY WORKOUTS</a></li>
+                                <li><a href="./Progress.php">PROGRESS</a></li>
+                                <li><a href="./contact.php">Contact</a></li>
                                 <li class="search-btn search-trigger"><i class="fa fa-search"></i></li>
+                                 <!-- Show Logout if logged in, otherwise show Login -->
+                                 <?php if (isset($_SESSION["user_id"])): ?>
+                                 <li><a href="php/logout.php" class="mobile-menu">Logout</a></li>
+                             <?php else: ?>
+                                 <li><a href="Login.html" class="mobile-menu">Login</a></li>
+                             <?php endif; ?>
                             </ul>
                         </nav>
                         <div id="mobile-menu-wrap"></div>
@@ -88,15 +96,15 @@
     </div>
     <!-- Top Social End -->
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-area set-bg" data-setbg="img/elements/element-bg.jpg">
+    <section class="breadcrumb-area set-bg" data-setbg="img/contact/contact-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-content">
-                        <h2>MY TRAINER</h2>
+                        <h2>Contact</h2>
                         <div class="links">
                             <a href="./index.html">Home</a>
-                            <a href="./Trainers.html" class="rt-breadcrumb">my workouts</a>
+                            <a href="./contact.html" class="rt-breadcrumb">Contact</a>
                         </div>
                     </div>
                 </div>
@@ -104,25 +112,50 @@
         </div>
     </section>
     <!-- Breadcrumb Section End -->
-   <!-- Trainer Details Page -->
-<div class="trainer-details-container">
-    <h2>My Trainer</h2>
-    <div class="trainer-card">
-        <img src="img/trainer.jpg" alt="Trainer Image" class="trainer-img">
-        <div class="trainer-info">
-            <h3>John Doe</h3>
-            <p>Email: Doe@gmail.com</p>
-            <p>Phone: 0777654564</p>
-            <p>Specialty: Strength</p>
-            <p class="availability"><span class="status-dot"></span> Availability Status</p>
+    <!-- Contact Section Begin -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <div class="contact-details">
+                            <h2>Get in Touch</h2>
+                            <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
+                                nulla pretium, vitae ornare leo.Aenean id auctor libero, gravida venenatis justo. Sed ut
+                                arcu nibh. Fusce lacinia arcu in ultrices finibus. Donec vestibulum imperdiet efficitur.
+                            </p>
+                            <ul class="address">
+                                <li>Main Str, no 23, New York</li>
+                                <li>+546 990221 123</li>
+                                <li>Fitness@contact.com</li>
+                            </ul>
+                        </div>
+                        <div class="contact-form">
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <input type="text" placeholder="Name">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="email" placeholder="Email">
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <input type="text" placeholder="Subject">
+                                        <textarea placeholder="Message"></textarea>
+                                        <button type="submit" class="site-btn">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="chat-box">
-        <p class="ctext">Connect with your trainer</p>
-        <textarea placeholder="Type Here..."></textarea>
-    </div>
-</div>
-    <!-- Elements Section End -->
+        <div class="map"><iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48359.89302507648!2d-73.95762813994347!3d40.75117343692072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2592bc7bab159%3A0x56156cc4c5ee8e31!2sLong+Island+City%2C+Queens%2C+NY%2C+USA!5e0!3m2!1sen!2sbd!4v1561474745218!5m2!1sen!2sbd"
+                style="border:0" allowfullscreen></iframe></div>
+    </section>
+    <!-- Contact Section End -->
     <!-- Footer Section Begin -->
     <footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
         <div class="container">

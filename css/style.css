@@ -271,7 +271,7 @@ ol {
 
 .main-menu .logo {
 	position: absolute;
-	left: 50%;
+	left: 45%;
 	top: 30px;
 	margin-left: -42.5px;
 }
@@ -2405,22 +2405,7 @@ ol {
 }
 
 
-
-.logout-container {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-}
-
-.logout-btn {
-    background: #ff4d4d;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.logout-btn:hover {
-    background: #cc0000;
+.logout-btn,
+.login-btn {
+	
 }

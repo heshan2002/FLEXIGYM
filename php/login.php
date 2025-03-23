@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } elseif ($user["role"] === "trainer") {
                 header("Location: ../trainerhome.html");
             } else {
-                header("Location: ../index.html"); 
+                header("Location: ../index.php"); 
             }
             exit();
         } else {

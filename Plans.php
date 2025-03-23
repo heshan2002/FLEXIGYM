@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -40,13 +44,19 @@
                         </div>
                         <nav class="mobile-menu">
                             <ul>
-                                <li><a href="./index.html">Home</a></li>
-                                <li><a href="./about-us.html">About us</a></li>
-                                <li><a href="./Plans.html">PLANS</a></li>
-                                <li><a href="./Trainers.html">TRAINERS</a></li>
-                                <li><a href="./Progress.html">PROGRESS</a></li>
-                                <li><a href="./contact.html">Contact</a></li>
+                                <li><a href="./index.php">Home</a></li>
+                                <li><a href="./about-us.php">About us</a></li>
+                                <li><a href="./Plans.php">PLANS</a></li>
+                                <li><a href="./Trainers.php">MY WORKOUTS</a></li>
+                                <li><a href="./Progress.php">PROGRESS</a></li>
+                                <li><a href="./contact.php">Contact</a></li>
                                 <li class="search-btn search-trigger"><i class="fa fa-search"></i></li>
+                                <!-- Show Logout if logged in, otherwise show Login -->
+                                <?php if (isset($_SESSION["user_id"])): ?>
+                                <li><a href="php/logout.php" class="mobile-menu">Logout</a></li>
+                            <?php else: ?>
+                                <li><a href="Login.html" class="mobile-menu">Login</a></li>
+                            <?php endif; ?>
                             </ul>
                         </nav>
                         <div id="mobile-menu-wrap"></div>
