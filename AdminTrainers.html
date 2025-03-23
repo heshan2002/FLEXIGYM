@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/AdminTrainers.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script> 
+  <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+  <script>
+    function upload(){
+    var imgcanvas = document.getElementById("canv1");
+    var fileinput = document.getElementById("finput");
+    var image = new SimpleImage(fileinput);
+    image.drawTo(imgcanvas);
+    }
+</script>
+</head>
+
+<body class="adminDashboard">
+
+    <!--Admin Left Side Navigation Bar-->  
+    <div class="adminnav">
+
+  <h3 ><center>Admin</center></h3>
+  <h3 style='color:#397FFF;'><center>FLEXIGYM</center></h3>
+
+  <center><hr style="width:90%;text-align:center;margin-left:0"></center>
+
+  <a href="AdminDashboard.html"><i class='fas fa-house-user' style='margin: 15px 10px 15px 15px;'></i>Dashboard</a>
+  <a href="AdminMembers.html"><i class='fa fa-users' style='margin: 15px 10px 15px 15px;'></i>Members</a>
+  <a href="AdminTrainers.html"><i class="fa fa-user-tie" style="margin: 15px 10px 15px 15px;"></i>Trainers</a>
+  <a href="#"><i class='fa fa-dumbbell' style='margin: 15px 10px 15px 15px;'></i>Workouts</a>
+  <a href="#"><i class='fa fa-user' style='margin: 15px 10px 15px 15px;' ></i>Asign Trainers</a>
+  <a href="#"><i class='fa fa-book' style='margin: 15px 10px 15px 15px;' ></i>Plans</a>
+  <a href="#"><i class='fa fa-user-circle-o' style='margin: 15px 10px 15px 15px;' ></i>Profile</a>
+  
+ 
+</div> <!--adminnav-->
+
+    <div class="adminUsers">
+    <h3>Trainers</h3>
+    <hr>
+
+    
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div>
+          <!--Add Trainer Button-->
+          <button class="addtrainer-btn"><a href="#divOne">Add New Trainer</a></button>
+
+          <div class="overlay" id="divOne">
+            <div class="wrapper">
+              <h3>Add a new Trainer</h3>
+              <hr style="background-color: rgb(15, 15, 206);">
+               <a href="#" class="close">&times;</a>
+               <div class="trainer-content">
+                <div class="trainer-container">
+                  <form class="trainerlabel">
+                    <div class="input-group username">
+                      <label>Full Name</label>
+                      <input type="text" placeholder="First Name" required>
+                    </div>
+
+                    <div class="input-group username">
+                      <label>Email</label>
+                      <input type="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="input-group username">
+                      <label>Ecperience Years</label>
+                      <input type="text" placeholder="Ecperience Years" required>
+                  </div>
+
+                  <div class="specialty">
+                    <label>Specialty</label>
+                    <select>
+                      <option>--select--</option>
+                      <option>Bodybuilding</option>
+                      <option>Strength</option>
+                      <option>Yoga</option>
+                      <option>Athletic</option>
+                      <option>Fitness</option>
+                    </select>
+                  </div>
+
+                  <div class="addtrainer-column">
+                    <div class="uploadimage">
+                    <canvas id= "canv1" ></canvas>
+                    
+                    <input type="file" multiple="false" accept="image/*" id=finput onchange="upload()">  
+                    </div>
+                  </div>
+                    
+                    <button type="submit-btn" onclick="sendMessage()" class="submit-btn"><a href="#">Submit</a></button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!--Report Generation Button-->
+          <button class="report-btn">Generate Report</button>
+      </div>
+  
+      <!--Search Box-->
+      <div class="search-container">
+          <input type="search" id="trainer-search" name="q" placeholder="Search...">
+          <button class="search-icon">Search</button>
+      </div>
+  </div>
+
+    <!--Registers Users Table-->
+    
+    <table>
+      <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Specialty</th>
+        <th>Availability Status</th>
+        <th>Actions</th>
+      </tr>
+    <tr>
+        <!-- <th scope="row"></th> -->
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+
+          <!-- View Button -->
+          <button class="view-btn"><a href="#viewtrainer">View</a></button>
+
+          <div class="overlay" id="viewtrainer">
+            <div class="viewwrapper">
+               <a href="#" class="close">&times;</a>
+               <div class="trainer-content">
+                <div class="trainer-container">
+                  <div class="container">
+                    <div class="sidebar">
+                        <div class="profile">
+                            <img src="../img/Admin.jpg" alt="Profile Picture">
+                            <h2>Trainer</h2>
+                        </div>
+                    </div>
+            
+                    <div class="main-content">
+                        <div class="tabs">
+                            <button class="tab active" data-tab="account">ACCOUNT</button>
+                        </div>
+            
+                        <div class="tab-content" id="tab-content">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" value="">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" value="">
+                            </div>
+                            <div class="form-group">
+                                <label>specialty</label>
+                                <input type="text" value="">
+                            </div>
+                            <div class="form-group">
+                                <label>Work Experience</label>
+                                <input type="text" value="">
+                            </div>
+                            <button class="back-btn"><a href="AdminTrainers.html">Back</a></button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+
+          <!-- Delete Button -->
+          <button class="delete-btn"><a href="#">Delete</a></button>
+        </td>
+        </tr>
+      
+    </table>
+  </div> 
+
+</body>   
+</html>
