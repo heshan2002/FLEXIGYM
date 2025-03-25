@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css/AdminworkoutT.css">
+<link rel="stylesheet" href="css/Adminassigntrainer.css">
 
 </head>
 
@@ -40,53 +41,36 @@
   <hr>
 
 
-<div class="container">
-    <h2>Assign Trainer</h2>
-    <p>Assigned Members Count: 2</p>
-    <input type="text" placeholder="Type here to find" class="search-box">
-
+  <div class="container">
+    <h2>Assign Trainer to Member</h2>
     <table>
         <thead>
             <tr>
-                <th>Availability</th>
-                <th>Trainer Name</th>
+                <th>Status</th>
+                <th>Name</th>
                 <th>Email</th>
                 <th>Specialty</th>
                 <th>Delete</th>
-                <th>Assign to Member</th>
+                <th>Assign</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><span class="status green"></span></td>
-                <td>BBBBBBB</td>
-                <td>CCCCCC</td>
-                <td>EEEEE</td>
-                <td><button class="delete-btn">DELETE</button></td>
-                <td><button class="assign-btn">ASSIGN</button></td>
-            </tr>
-            <tr>
-                <td><span class="status red"></span></td>
-                <td>BBBBBBB</td>
-                <td>CCCCCC</td>
-                <td>EEEEE</td>
-                <td><button class="delete-btn">DELETE</button></td>
-                <td><button class="assign-btn">ASSIGN</button></td>
-            </tr>
+            <!-- Trainer data will be loaded here dynamically -->
         </tbody>
     </table>
-
 </div>
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <h3>Add Member</h3>
-            <ul>
-                <li>CCCCCC ⭐ <button class="add-btn">ADD</button></li>
-                <li>DDDDDD 🌟 <button class="add-btn">ADD</button></li>
-            </ul>
-        </div>
-    </div>
 
-    <script src="js/Adminassigntrainer.js"></script>
+<!-- Popup for selecting a member -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h3>Select a Member</h3>
+        <ul>
+            <!-- Member list will be loaded here dynamically -->
+        </ul>
+        <button class="close-btn" onclick="document.getElementById('popup').style.display='none'">Close</button>
+    </div>
+</div>
+
+<script src="js/Adminassigntrainer.js"></script>
 </body>
 </html> 
