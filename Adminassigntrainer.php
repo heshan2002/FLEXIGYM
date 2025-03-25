@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +8,9 @@
 <link rel="stylesheet" href="css/AdminDashboard.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/AdminworkoutT.css">
+<link rel="stylesheet" href="css/Adminassigntrainer.css">
+
 </head>
 
 <body class="adminDashboard">    
@@ -16,7 +22,7 @@
   <h3 style='color:#397FFF;'><center>FLEXIGYM</center></h3>
 
   <center><hr style="width:90%;text-align:center;margin-left:0"></center>
-  
+
   <a href="AdminDashboard.php"><i class='fas fa-house-user' style='margin: 15px 10px 15px 15px;'></i>Dashboard</a>
   <a href="AdminMembers.php"><i class='fa fa-users' style='margin: 15px 10px 15px 15px;'></i>Members</a>
   <a href="AdminTrainers.php"><i class="fa fa-user-tie" style="margin: 15px 10px 15px 15px;"></i>Trainers</a>
@@ -37,46 +43,37 @@
   </div>
   <hr>
 
-  <!--Admin Dashboard Cards-->
-  <!--Row 1-->
-  <div class="row-ad1">
-    <div class="col-ad1">
-    <div class="admincard">
-        <div class="admincontainer">
 
-          <a href="AdminPassengers.php"><h4><i class='fa fa-users'></i><b>Members</b></h4></a>
-          <p><b>10</b></p> 
-          <hr>
-          
-        </div> <!--admincontainer-->
-      </div> <!--admincard-->
-    </div> <!--col-ad1-->
+  <div class="container">
+    <h2>Assign Trainer to Member</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Specialty</th>
+                <th>Delete</th>
+                <th>Assign</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Trainer data will be loaded here dynamically -->
+        </tbody>
+    </table>
+</div>
 
-    <div class="col-ad2">
-      <div class="admincard">
-        <div class="admincontainer">
+<!-- Popup for selecting a member -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h3>Select a Member</h3>
+        <ul>
+            <!-- Member list will be loaded here dynamically -->
+        </ul>
+        <button class="close-btn" onclick="document.getElementById('popup').style.display='none'">Close</button>
+    </div>
+</div>
 
-          <a href="AdminFlights.php"><h4><i class='fa fa-user-tie' ></i><b>Trainers</b></h4></a>
-          <p><b>15</b></p> 
-          <hr>
-        </div> <!--admincontainer-->
-      </div> <!--admincard-->
-    </div> <!--col-ad2-->
-    
-    <div class="col-ad3">
-      <div class="admincard">
-        <div class="admincontainer">
-    
-          <a href="AdminSchedule.php"><h4><i class="fa fa-book"></i><b>Plans</b></h4></a> 
-          <p><b>2</b></p> 
-          <hr>
-
-        </div> <!--admincontainer-->
-      </div> <!--admincard-->
-    </div> <!--col-ad3-->
-  </div> <!--row-ad1-->
- 
-</div> <!--adminmain-->
-
+<script src="js/Adminassigntrainer.js"></script>
 </body>
 </html> 
