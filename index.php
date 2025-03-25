@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+require("php/logout.php");
 ?>
 
 
@@ -39,7 +41,7 @@ session_start();
                 <div class="col-lg-12">
                     <div class="main-menu">
                         <div class="logo">
-                            <a href="./index.html">
+                            <a href="./index.php">
                                 <img src="img/logo.gif" alt="">
                             </a>
                         </div>
@@ -55,9 +57,9 @@ session_start();
 
                                 <!-- Show Logout if logged in, otherwise show Login -->
                                 <?php if (isset($_SESSION["user_id"])): ?>
-                                    <li><a href="php/logout.php" class="mobile-menu">Logout</a></li>
+                                    <li><a href="Login.php?logout='1'" class="mobile-menu" name="logout" >Logout</a></li>
                                 <?php else: ?>
-                                    <li><a href="Login.html" class="mobile-menu">Login</a></li>
+                                    <li><a href="Login.php" class="mobile-menu">Login</a></li>
                                 <?php endif; ?>
                             </ul>
                         </nav>
@@ -103,17 +105,17 @@ session_start();
             <div class="single-slide set-bg active" data-setbg="img/bg.jpg">
                 <a href="https://www.youtube.com/watch?v=SEVuD_djKrU" class="play-btn pop-up"><i class="fa fa-play"></i></a>
                 <h1>FLEXIGYM</h1>
-                <a href="Login.html" class="primary-btn">Join Us</a>
+                <a href="SignUp.php" class="primary-btn">Join Us</a>
             </div>
             <div class="single-slide set-bg" data-setbg="img/bg-2.jpg">
                 <a href="https://www.youtube.com/watch?v=SEVuD_djKrU" class="play-btn pop-up"><i class="fa fa-play"></i></a>
                 <h1>FLEXIGYM</h1>
-                <a href="Login.html" class="primary-btn">Join Us</a>
+                <a href="SignUp.php" class="primary-btn">Join Us</a>
             </div>
             <div class="single-slide set-bg" data-setbg="img/bg-3.jpg">
                 <a href="https://www.youtube.com/watch?v=SEVuD_djKrU" class="play-btn pop-up"><i class="fa fa-play"></i></a>
                 <h1>FLEXIGYM</h1>
-                <a href="Login.html" class="primary-btn">Join Us</a>
+                <a href="SignUp.php" class="primary-btn">Join Us</a>
             </div>
         </div>
     </section>
@@ -342,7 +344,7 @@ session_start();
                         </div>
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="./index.html">Home</a></li>
+                                <li><a href="./index.php">Home</a></li>
                                 <li><a href="#">About us</a></li>
                                 <li><a href="#">Classes</a></li>
                                 <li><a href="#">Instructors</a></li>

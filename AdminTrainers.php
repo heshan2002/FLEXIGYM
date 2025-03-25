@@ -1,3 +1,16 @@
+<?php
+require("php/database.php");
+
+session_start();
+
+if (!isset($_SESSION["email"])) {
+  header("location:Login.php");
+  exit();
+}
+
+?>
+<?php include("php/adminTrainer_server.php"); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,13 +39,13 @@
 
   <center><hr style="width:90%;text-align:center;margin-left:0"></center>
 
-  <a href="AdminDashboard.html"><i class='fas fa-house-user' style='margin: 15px 10px 15px 15px;'></i>Dashboard</a>
-  <a href="AdminMembers.html"><i class='fa fa-users' style='margin: 15px 10px 15px 15px;'></i>Members</a>
-  <a href="AdminTrainers.html"><i class="fa fa-user-tie" style="margin: 15px 10px 15px 15px;"></i>Trainers</a>
-  <a href="#"><i class='fa fa-dumbbell' style='margin: 15px 10px 15px 15px;'></i>Workouts</a>
-  <a href="#"><i class='fa fa-user' style='margin: 15px 10px 15px 15px;' ></i>Asign Trainers</a>
+  <a href="AdminDashboard.php"><i class='fas fa-house-user' style='margin: 15px 10px 15px 15px;'></i>Dashboard</a>
+  <a href="AdminMembers.php"><i class='fa fa-users' style='margin: 15px 10px 15px 15px;'></i>Members</a>
+  <a href="AdminTrainers.php"><i class="fa fa-user-tie" style="margin: 15px 10px 15px 15px;"></i>Trainers</a>
+  <a href="Adminworkout.html"><i class='fa fa-dumbbell' style='margin: 15px 10px 15px 15px;'></i>Workouts</a>
+  <a href="Adminassigntrainer.html"><i class='fa fa-user' style='margin: 15px 10px 15px 15px;' ></i>Asign Trainers</a>
   <a href="#"><i class='fa fa-book' style='margin: 15px 10px 15px 15px;' ></i>Plans</a>
-  <a href="#"><i class='fa fa-user-circle-o' style='margin: 15px 10px 15px 15px;' ></i>Profile</a>
+  <!-- <a href="#"><i class='fa fa-user-circle-o' style='margin: 15px 10px 15px 15px;' ></i>Profile</a> -->
   
  
 </div> <!--adminnav-->
@@ -54,31 +67,31 @@
                <a href="#" class="close">&times;</a>
                <div class="trainer-content">
                 <div class="trainer-container">
-                  <form class="trainerlabel">
+                  <form class="trainerlabel" action="AdminTrainers.php" method="post">
                     <div class="input-group username">
-                      <label>Full Name</label>
-                      <input type="text" placeholder="First Name" required>
+                      <label for="tName" >Full Name</label>
+                      <input type="text" placeholder="First Name" id="tName" name="tName" required>
                     </div>
 
                     <div class="input-group username">
-                      <label>Email</label>
-                      <input type="email" placeholder="Email" required>
+                      <label for="tEmail" >Email</label>
+                      <input type="email" placeholder="Email" id="tEmail" name="tEmail" required>
                     </div>
 
                     <div class="input-group username">
-                      <label>Ecperience Years</label>
-                      <input type="text" placeholder="Ecperience Years" required>
-                  </div>
+                      <label for="tYears" >Experience Years</label>
+                      <input type="text" placeholder="Ecperience Years" id="tYears" name="tYears" required>
+                    </div>
 
-                  <div class="specialty">
-                    <label>Specialty</label>
-                    <select>
+                  <div class="specialty" >
+                    <label for="tSpecialty">Specialty</label>
+                    <select id="tSpecialty" name="tSpecialty" >
                       <option>--select--</option>
-                      <option>Bodybuilding</option>
-                      <option>Strength</option>
-                      <option>Yoga</option>
-                      <option>Athletic</option>
-                      <option>Fitness</option>
+                      <option value="Bodybuilding">Bodybuilding</option>
+                      <option value="Strength">Strength</option>
+                      <option value="Yoga">Yoga</option>
+                      <option value="Athletic">Athletic</option>
+                      <option value="Fitness">Fitness</option>
                     </select>
                   </div>
 
@@ -86,11 +99,11 @@
                     <div class="uploadimage">
                     <canvas id= "canv1" ></canvas>
                     
-                    <input type="file" multiple="false" accept="image/*" id=finput onchange="upload()">  
+                    <input type="file" multiple="false" accept="image/*" id=finput name="tPic" onchange="upload()">  
                     </div>
                   </div>
                     
-                    <button type="submit-btn" onclick="sendMessage()" class="submit-btn"><a href="#">Submit</a></button>
+                    <button type="submit-btn" class="submit-btn" onclick="sendMessage()"  name="add_trainer">Submit</button>
                 </form>
                 </div>
               </div>
@@ -119,14 +132,22 @@
         <th>Availability Status</th>
         <th>Actions</th>
       </tr>
-    <tr>
-        <!-- <th scope="row"></th> -->
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>
+      
+      <?php
+        $sql = "SELECT * FROM  trainers";
+        $result = mysqli_query($conn, $sql);
 
+        if (mysqli_num_rows($result) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result)) {
+      ?>
+
+      <tr>
+        <td><?php echo $row["name"]?></td>
+        <td><?php echo $row["email"]?></td>
+        <td><?php echo $row["specialty"]?></td>
+        <td><?php echo $row["availability"]?></td>
+        <td>
           <!-- View Button -->
           <button class="view-btn"><a href="#viewtrainer">View</a></button>
 
@@ -145,27 +166,27 @@
             
                     <div class="main-content">
                         <div class="tabs">
-                            <button class="tab active" data-tab="account">ACCOUNT</button>
+                            <button class="tab active" data-tab="account">Personal Details</button>
                         </div>
             
                         <div class="tab-content" id="tab-content">
                             <div class="form-group">
                                 <label>Full Name</label>
-                                <input type="text" value="">
+                                <input type="text" value="<?php echo $row["name"]?>">
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" value="">
+                                <input type="email" value="<?php echo $row["email"]?>">
                             </div>
                             <div class="form-group">
                                 <label>specialty</label>
-                                <input type="text" value="">
+                                <input type="text" value="<?php echo $row["specialty"]?>">
                             </div>
                             <div class="form-group">
                                 <label>Work Experience</label>
-                                <input type="text" value="">
+                                <input type="text" value="<?php echo $row["experience_years"]?>">
                             </div>
-                            <button class="back-btn"><a href="AdminTrainers.html">Back</a></button>
+                            <button class="back-btn"><a href="AdminTrainers.php">Back</a></button>
                         </div>
                     </div>
                 </div>
@@ -173,13 +194,13 @@
                 </div>
               </div>
             </div>
-
+            
 
           <!-- Delete Button -->
-          <button class="delete-btn"><a href="#">Delete</a></button>
+          <button class="delete-btn"><a href="AdminTrainers.php?delete_trainerId=<?php echo $row["trainer_id"]?>">Delete</a></button>
         </td>
         </tr>
-      
+        <?php } }?>
     </table>
   </div> 
 
