@@ -1,3 +1,7 @@
+<?php
+require("php/database.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,40 +12,43 @@
 </head>
 <body class="user-signup">
     <div class="signup-container">
-        <form action="php/register.php" method="POST">
+        <form action="php/register.php" method="post">
             <h2 class="signup-title">Create Account</h2>
 
             <h3 class="signup-section-title">-- Personal Details --</h3>
             <div class="signup-row">
                 <div class="signup-column">
-                    <label>Full Name *</label>
-                    <input type="text" name="fullname" placeholder="Full Name" required>
+                    <label for="full_name">Full Name *</label>
+                    <input type="text" name="full_name" id="full_name" placeholder="Full Name" required>
                 </div>
+
                 <div class="signup-column">
-                    <label>Email *</label>
-                    <input type="email" name="email" placeholder="Email" required>
+                    <label for="email">Email *</label>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
                 </div>
             </div>
 
             <div class="signup-row">
                 <div class="signup-column">
-                    <label>Phone Number *</label>
-                    <input type="text" name="phone" placeholder="Phone Number" required>
+                    <label for="phone">Phone Number *</label>
+                    <input type="text" name="phone" id="phone" placeholder="Phone Number" required>
                 </div>
+
                 <div class="signup-column">
-                    <label>Password *</label>
-                    <input type="password" name="password" placeholder="Password" required>
+                    <label for="password">Password *</label>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
                 </div>
             </div>
 
             <div class="signup-row">
                 <div class="signup-column">
-                    <label>Date of Birth *</label>
-                    <input type="date" name="dob" required>
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" name="dob" id="dob" required>
                 </div>
+
                 <div class="signup-column">
-                    <label>Gender *</label>
-                    <select name="gender" required>
+                    <label for="gender" >Gender *</label>
+                    <select name="gender" id="gender" required>
                         <option value="">--select--</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -52,30 +59,30 @@
             <h3 class="signup-section-title">-- Fitness Details --</h3>
             <div class="signup-row">
                 <div class="signup-column">
-                    <label>Height (cm) *</label>
-                    <input type="text" name="height" placeholder="Height (cm)" required>
+                    <label for="height">Height (cm) *</label>
+                    <input type="number" name="height" id="height" placeholder="Height (cm)" required>
                 </div>
                 <div class="signup-column">
-                    <label>Weight (kg) *</label>
-                    <input type="text" name="weight" placeholder="Weight (kg)" required>
-                </div>
-            </div>
-
-            <div class="signup-row">
-                <div class="signup-column">
-                    <label>Body Fat Percentage *</label>
-                    <input type="text" name="body_fat" placeholder="Body Fat (%)" required>
-                </div>
-                <div class="signup-column">
-                    <label>Muscle Mass (%) *</label>
-                    <input type="text" name="muscle_mass" placeholder="Muscle Mass (%)" required>
+                    <label for="weight">Weight (kg) *</label>
+                    <input type="number" name="weight" id="weight" placeholder="Weight (kg)" required>
                 </div>
             </div>
 
             <div class="signup-row">
                 <div class="signup-column">
-                    <label>Current Fitness Level *</label>
-                    <select name="fitness_level" required>
+                    <label for="body_fat">Body Fat Percentage *</label>
+                    <input type="number" name="body_fat" id="body_fat" placeholder="Body Fat (%)" required>
+                </div>
+                <div class="signup-column">
+                    <label for="muscle_mass">Muscle Mass (%) *</label>
+                    <input type="number" name="muscle_mass" id="muscle_mass" placeholder="Muscle Mass (%)" required>
+                </div>
+            </div>
+
+            <div class="signup-row">
+                <div class="signup-column">
+                    <label for="fitness_level">Current Fitness Level *</label>
+                    <select name="fitness_level" id="fitness_level" required>
                         <option value="">--select--</option>
                         <option value="Beginner">Beginner</option>
                         <option value="Intermediate">Intermediate</option>
@@ -84,8 +91,8 @@
                 </div>
                 
                     <div class="signup-column">
-                        <label>Fitness Goal *</label>
-                        <select name="fitness_goal" required>
+                        <label for="fitness_goal">Fitness Goal *</label>
+                        <select name="fitness_goal" id="fitness_goal" required>
                             <option value="">--select--</option>
                             <option value="Weight Loss">Weight Loss</option>
                             <option value="Muscle Gain">Muscle Gain</option>
@@ -96,8 +103,8 @@
                 
                 
                 <div class="signup-column">
-                    <label>Preferred Workout Time *</label>
-                    <select name="workout_time" required>
+                    <label for="workout_time">Preferred Workout Time *</label>
+                    <select name="workout_time" id="workout_time" required>
                         <option value="">--select--</option>
                         <option value="Morning">Morning</option>
                         <option value="Afternoon">Afternoon</option>
@@ -108,16 +115,16 @@
 
             <div class="signup-row">
                 <div class="signup-column">
-                    <label>Equipment Availability *</label>
-                    <select name="equipment_available" required>
+                    <label for="equipment_available">Equipment Availability *</label>
+                    <select name="equipment_available" id="equipment_available" required>
                         <option value="">--select--</option>
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
                 </div>
                 <div class="signup-column">
-                    <label>Trainer Preference *</label>
-                    <select name="trainer_preference" required>
+                    <label for="trainer_preference">Trainer Preference *</label>
+                    <select name="trainer_preference" id="trainer_preference" required>
                         <option value="">--select--</option>
                         <option value="Male Trainer">Male Trainer</option>
                         <option value="Female Trainer">Female Trainer</option>
@@ -126,8 +133,8 @@
                 </div>
             </div>
 
-            <button type="submit" class="signup-submit-button">Sign Up</button>
-            <p class="signup-login-link">Already have an account? <a href="Login.html">Log In</a></p>
+            <button type="submit" class="signup-submit-button"  name="sign_up">Sign Up</button>
+            <p class="signup-login-link">Already have an account? <a href="Login.php">Log In</a></p>
         </form>
     </div>
 </body>
