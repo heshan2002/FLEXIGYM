@@ -1,12 +1,14 @@
 <?php
 require("php/database.php");
 
+
 session_start();
 
 if (!isset($_SESSION["email"])) {
   header("location:Login.php");
   exit();
 }
+
 
 ?>
 <?php include("php/adminMember_server.php"); ?>
@@ -47,20 +49,20 @@ if (!isset($_SESSION["email"])) {
 
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <!--Report Generation Button-->
-      <div>
-          <button class="report-btn">Generate Report</button>
-      </div>
+      <form method="post" action="AdminMembers.php">
+          <button class="report-btn" type="submit" name="generate_member_pdf">Generate Report</button>
+      </form>
   
       <!--Search Box-->
       <div class="search-container">
-          <input type="search" id="member-search" name="q" placeholder="Search...">
-          <button class="search-icon">Search</button>
+          <input type="search" id="member-search" placeholder="Search......">
       </div>
   </div>
 
     <!--Registers Users Table-->
     
-    <table>
+    <table id="member-table">
+    <thead>
       <tr>
         <th>Full Name</th>
         <th>Email</th>
@@ -69,6 +71,8 @@ if (!isset($_SESSION["email"])) {
         <th>Status</th>
         <th>Actions</th>
       </tr>
+    </thead>  
+    <tbody id="member-table-body">
       
       <?php
         $sql = "SELECT u.* , m.plan, m.expiry_date 
@@ -163,8 +167,25 @@ if (!isset($_SESSION["email"])) {
         </td>
         </tr>
         <?php } }?>
+        </tbody>
     </table>
   </div> 
+
+  <!-- AJAX Search Script -->
+<script>
+  document.getElementById("member-search").addEventListener("keyup", function () {
+    const query = this.value;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "ajax_search_members.php?search=" + query, true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        document.getElementById("member-table-body").innerHTML = xhr.responseText;
+      }
+    };
+    xhr.send();
+  });
+</script>
 
 </body>   
 </html>
