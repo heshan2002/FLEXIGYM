@@ -93,7 +93,7 @@ if (isset($_POST['generate_member_pdf'])) {
 
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <!--Report Generation Button-->
-      <form method="post" action="AdminMembers.php">
+      <form method="post" action="php/generate_members_pdf.php">
           <button class="report-btn" type="submit" name="generate_member_pdf">Generate Report</button>
       </form>
   

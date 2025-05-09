@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2025 at 03:24 AM
+-- Generation Time: May 07, 2025 at 08:05 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,6 +35,13 @@ CREATE TABLE `memberships` (
   `payment_status` enum('pending','completed') DEFAULT 'pending',
   `expiry_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `memberships`
+--
+
+INSERT INTO `memberships` (`membership_id`, `user_id`, `plan`, `amount_paid`, `payment_status`, `expiry_date`) VALUES
+(2, 3, 'Gold', 5000.00, 'pending', '2025-05-31');
 
 -- --------------------------------------------------------
 
@@ -69,6 +76,13 @@ CREATE TABLE `trainers` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `trainers`
+--
+
+INSERT INTO `trainers` (`trainer_id`, `name`, `email`, `specialty`, `experience_years`, `availability`, `profile_picture`, `created_at`) VALUES
+(12, 'Mark', 'mark@gmail.com', 'Bodybuilding', 2, 'available', '1746358636_Screenshot 2025-04-29 084321.png', '2025-05-04 11:37:16');
+
 -- --------------------------------------------------------
 
 --
@@ -81,6 +95,34 @@ CREATE TABLE `trainer_assignments` (
   `trainer_id` int(11) DEFAULT NULL,
   `assigned_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `membership_plans`
+--
+
+CREATE TABLE `membership_plans` (
+  `plan_id` int(11) NOT NULL AUTO_INCREMENT,
+  `plan_name` varchar(50) NOT NULL,
+  `description` text NOT NULL,
+  `duration_months` int(11) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `benefits` text NOT NULL,
+  `status` enum('active','inactive') DEFAULT 'active',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`plan_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `membership_plans`
+--
+
+INSERT INTO `membership_plans` (`plan_id`, `plan_name`, `description`, `duration_months`, `price`, `benefits`, `status`, `created_at`) VALUES
+(1, 'Basic', 'Access to gym facilities during regular hours', 1, 2500.00, 'Gym access, Locker access', 'active', '2025-05-07 08:00:00'),
+(2, 'Silver', 'Full access with limited trainer consultations', 3, 6000.00, 'Gym access, Locker access, 1 trainer session per week', 'active', '2025-05-07 08:00:00'),
+(3, 'Gold', 'Premium membership with full trainer support', 6, 10000.00, 'Gym access, Locker access, Unlimited trainer sessions, Nutritional guidance', 'active', '2025-05-07 08:00:00'),
+(4, 'Platinum', 'VIP membership with all benefits', 12, 18000.00, 'Gym access, Locker access, Unlimited trainer sessions, Nutritional guidance, Personal training plan, Access to premium classes', 'active', '2025-05-07 08:00:00');
 
 -- --------------------------------------------------------
 
@@ -109,6 +151,14 @@ CREATE TABLE `users` (
   `role` enum('member','trainer','admin') DEFAULT 'member',
   `registered_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `full_name`, `email`, `phone`, `password`, `dob`, `gender`, `height`, `weight`, `body_fat`, `muscle_mass`, `fitness_level`, `fitness_goal`, `workout_time`, `equipment_available`, `trainer_preference`, `relationship`, `role`, `registered_at`) VALUES
+(1, 'Admin User', 'admin@flexigym.com', '0712345678', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9', '1990-01-01', 'Male', 0.00, 0.00, 0.00, 0.00, 'Beginner', 'General Fitness', 'Morning', 'No', 'Any', 'Other', 'admin', '2025-03-26 06:15:41'),
+(3, 'Dilani Ayesha', 'dilani@gmail.com', '0716623410', '$2y$10$.KyXbQf0p5Q7i4nVbAWDBO4J.PsIwUHxFdblqRIJUo11CtaXiJjRO', '2025-04-01', 'Female', 158.00, 50.00, 25.00, 20.00, 'Beginner', 'Weight Loss', 'Morning', 'Yes', 'Any', 'Other', 'member', '2025-04-29 14:38:40');
 
 -- --------------------------------------------------------
 
@@ -182,7 +232,7 @@ ALTER TABLE `workouts`
 -- AUTO_INCREMENT for table `memberships`
 --
 ALTER TABLE `memberships`
-  MODIFY `membership_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `membership_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `progress`
@@ -194,7 +244,7 @@ ALTER TABLE `progress`
 -- AUTO_INCREMENT for table `trainers`
 --
 ALTER TABLE `trainers`
-  MODIFY `trainer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `trainer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `trainer_assignments`
@@ -206,7 +256,7 @@ ALTER TABLE `trainer_assignments`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `workouts`
