@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="css/AdminDashboard.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="adminDashboard">    
@@ -31,7 +32,7 @@
   <div class="row-ad3">
     <h2 class="header-title">Admin Dashboard</h2>
     <div class="header-right">
-    <button class="logout-btn"><a href="#">Log Out</a></button>
+    <button class="logout-btn"><a href="Login.php">Log Out</a></button>
     <img src="./img/Admin.jpg" class="Profile-img" alt="Paris" width="70" height="70" style="clip-path: circle(50%);">
     </div>
   </div>
@@ -77,6 +78,94 @@
   </div> <!--row-ad1-->
  
 </div> <!--adminmain-->
+
+<!-- Chart Containers: Place after summary cards -->
+<div class="admin-charts-container">
+  <div class="admin-chart-box">
+    <canvas id="membersChart"></canvas>
+  </div>
+  <div class="admin-chart-box">
+    <canvas id="trainersChart"></canvas>
+  </div>
+</div>
+
+<!-- Chart Script: Place before </body> -->
+<script>
+  // Hardcoded data for monthly added members
+  const membersData = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    datasets: [{
+      label: 'Members Added',
+      data: [12, 19, 14, 17, 22, 25, 20, 18, 24, 21, 15, 23],
+      backgroundColor: 'rgba(74, 144, 226, 0.7)',
+      borderColor: 'rgba(74, 144, 226, 1)',
+      borderWidth: 1
+    }]
+  };
+
+  // Hardcoded data for monthly added trainers
+  const trainersData = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    datasets: [{
+      label: 'Trainers Added',
+      data: [2, 3, 1, 4, 2, 3, 2, 1, 3, 2, 2, 4],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.7)',
+        'rgba(255, 159, 64, 0.7)',
+        'rgba(255, 205, 86, 0.7)',
+        'rgba(75, 192, 192, 0.7)',
+        'rgba(54, 162, 235, 0.7)',
+        'rgba(153, 102, 255, 0.7)',
+        'rgba(201, 203, 207, 0.7)',
+        'rgba(255, 99, 132, 0.7)',
+        'rgba(255, 159, 64, 0.7)',
+        'rgba(255, 205, 86, 0.7)',
+        'rgba(75, 192, 192, 0.7)',
+        'rgba(54, 162, 235, 0.7)'
+      ],
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1
+    }]
+  };
+
+  // Bar chart for members
+  new Chart(document.getElementById('membersChart'), {
+    type: 'bar',
+    data: membersData,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        title: { display: true, text: 'Monthly Added Members' }
+      },
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+
+  // Pie chart for trainers
+  new Chart(document.getElementById('trainersChart'), {
+    type: 'pie',
+    data: {
+      labels: trainersData.labels,
+      datasets: [{
+        label: 'Trainers Added',
+        data: trainersData.datasets[0].data,
+        backgroundColor: trainersData.datasets[0].backgroundColor,
+        borderColor: trainersData.datasets[0].borderColor,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom' },
+        title: { display: true, text: 'Monthly Added Trainers' }
+      }
+    }
+  });
+</script>
 
 </body>
 </html> 
