@@ -48,12 +48,12 @@
 
   /* ------------Add new Trainer------------------ */
   .addtrainer-btn{
-    border-radius: 8px;
+    border-radius: 100px;
     background-color: #069433;
     text-decoration: none;
     padding: 5px 20px;
     border: none;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     font-size: 14px;
     cursor: pointer;
     display: inline-block;

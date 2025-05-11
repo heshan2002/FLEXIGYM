@@ -7,9 +7,34 @@
     $t_email = mysqli_real_escape_string($conn, $_POST['tEmail']);
     $t_specialty = mysqli_real_escape_string($conn, $_POST['tSpecialty']);
     $t_years = mysqli_real_escape_string($conn, $_POST['tYears']);
-    // $t_profilePic = mysqli_real_escape_string($conn, $_POST['tPic']);
 
-    $sql= "INSERT INTO trainers (name, email, specialty, experience_years) VALUES ('$t_name', '$t_email', '$t_specialty', '$t_years')";
+
+    // File Upload Handling
+    $targetDir = "img/trainer/"; // Folder to store uploaded images
+    if (!is_dir($targetDir)) {
+        mkdir($targetDir, 0777, true); // Create folder if it doesn't exist
+    }
+
+    $fileName = time() . "_" . basename($_FILES["fileToUpload"]["name"]); // Avoid duplicate names
+    $targetFilePath = $targetDir . $fileName;
+    $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+
+    // Allowed file formats
+    $allowedTypes = ["jpg", "jpeg", "png", "gif"];
+
+    if (in_array($fileType, $allowedTypes)) {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFilePath)) {
+            echo "File uploaded successfully!";
+        } else {
+            echo "Error uploading the file.";
+            exit();
+        }
+    } else {
+        echo "Invalid file type. Only JPG, JPEG, PNG, and GIF are allowed.";
+        exit();
+    }
+
+    $sql= "INSERT INTO trainers (name, email, specialty, experience_years, profile_picture) VALUES ('$t_name', '$t_email', '$t_specialty', '$t_years', '$fileName')";
     $result = mysqli_query($conn,$sql);
 
     if ($result) {
