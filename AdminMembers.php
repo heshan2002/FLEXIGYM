@@ -62,6 +62,7 @@ if (isset($_POST['generate_member_pdf'])) {
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/AdminMembers.css">
+  <link rel="stylesheet" href="css/AdminDashboard.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script> 
 </head>
@@ -88,7 +89,13 @@ if (isset($_POST['generate_member_pdf'])) {
 </div> <!--adminnav-->
 
     <div class="adminUsers">
-    <h3>Members</h3>
+    <div class="row-ad3">
+    <h2 class="header-title">Members</h2>
+    <div class="header-right">
+    <button class="logout-btn"><a href="Login.php">Log Out</a></button>
+    <img src="./img/Admin.jpg" class="Profile-img" alt="Paris" width="70" height="70" style="clip-path: circle(50%);">
+    </div>
+    </div>
     <hr>
 
     <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -151,7 +158,7 @@ if (isset($_POST['generate_member_pdf'])) {
                   <div class="container">
                     <div class="sidebar">
                         <div class="profile">
-                            <img src="../img/Admin.jpg" alt="Profile Picture">
+                            <!-- <img src="../img/Admin.jpg" alt="Profile Picture"> -->
                             <h2>Member</h2>
                             <h2><?php echo $row["full_name"]?></h2>
                             <div class="details">
@@ -207,7 +214,7 @@ if (isset($_POST['generate_member_pdf'])) {
 
 
         <!-- Delete Button -->
-        <button class="delete-btn"><a href="AdminMembers.php?delete_memberId=<?php echo $row["user_id"]?>">Delete</a></button>
+          <button class="delete-btn" onclick="return confirm('Are you sure you want to delete this member? This action cannot be undone.');"><a href="AdminMembers.php?delete_memberId=<?php echo $row["user_id"]?>">Delete</a></button>
         </td>
         </tr>
         <?php } }?>
