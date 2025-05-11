@@ -90,7 +90,7 @@ require("php/logout.php");
     <div class="top-social">
         <div class="top-social-links">
             <ul>
-                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="./UserProfile.php"><i class="fa fa-user" color="white"></i></a></li>
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>

@@ -177,4 +177,76 @@
   }
   
 
+.admin-charts-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 40px 0 0 50px;
+  gap: 6rem;                  /* Space between the two charts */
+  width: 100%;
+}
+
+.admin-chart-box {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+  width: 370px;               /* Fixed width for both cards */
+  min-width: 370px;
+  max-width: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+  transition: box-shadow 0.2s;
+}
+
+.admin-chart-box:hover {
+  box-shadow: 0 8px 32px rgba(74, 144, 226, 0.15);
+}
+
+.admin-chart-box canvas {
+  max-width: 320px;
+  max-height: 200px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: min-content;
+  gap: 2.5rem 2rem;
+  justify-items: center;
+  margin: 40px 0 0 0;
+  width: 100%;
+}
+
+.dashboard-card {
+  /* Place your existing card styles here, or leave empty if already styled */
+}
+
+.dashboard-chart-box {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+  width: 370px;
+  min-width: 370px;
+  max-width: 370px;
+  height: 320px;         /* Ensures same height */
+  min-height: 320px;
+  max-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+  transition: box-shadow 0.2s;
+  grid-row: 2;
+}
+
+.dashboard-chart-box canvas {
+  max-width: 320px;
+  max-height: 200px;
+}
+
    
