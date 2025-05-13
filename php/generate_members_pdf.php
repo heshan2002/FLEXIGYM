@@ -40,9 +40,8 @@ $pdf->Cell(0, 10, 'FlexiGym Member Report', 0, 1, 'C');
 $pdf->SetFont('helvetica', '', 12);
 
 // Get member data
-$sql = "SELECT u.full_name, u.email, u.phone, m.plan, m.expiry_date 
-        FROM users u 
-        JOIN memberships m ON u.user_id = m.user_id 
+$sql = "SELECT u.* 
+        FROM users u  
         WHERE u.role = 'member'";
 $result = mysqli_query($conn, $sql);
 
@@ -53,8 +52,8 @@ $tbl = '<table border="1" cellspacing="0" cellpadding="4" style="width: 100%;">
                   <th><b>Full Name</b></th>
                   <th><b>Email</b></th>
                   <th><b>Phone</b></th>
-                  <th><b>Plan</b></th>
-                  <th><b>Expiry Date</b></th>
+                  <th><b>Fitness Level</b></th>
+                  <th><b>Workout Time</b></th>
               </tr>
           </thead><tbody>';
 
@@ -63,8 +62,8 @@ while ($row = mysqli_fetch_assoc($result)) {
               <td>' . htmlspecialchars($row['full_name']) . '</td>
               <td>' . htmlspecialchars($row['email']) . '</td>
               <td>' . htmlspecialchars($row['phone']) . '</td>
-              <td>' . htmlspecialchars($row['plan']) . '</td>
-              <td>' . htmlspecialchars($row['expiry_date']) . '</td>
+              <td>' . htmlspecialchars($row['fitness_level']) . '</td>
+              <td>' . htmlspecialchars($row['workout_time']) . '</td>
           </tr>';
 }
 

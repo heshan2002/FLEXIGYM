@@ -6,6 +6,54 @@ require_once('php/tcpdf/tcpdf.php');
 
 session_start();
 
+if (!isset($_SESSION["email"])) {
+  header("location:Login.php");
+  exit();
+}
+
+// =================== Generate PDF ===================
+if (isset($_POST['generate_member_pdf'])) {
+  $pdf = new TCPDF();
+  $pdf->AddPage();
+  $pdf->SetFont('helvetica', 'B', 16);
+  $pdf->Cell(0, 10, 'FlexiGym Member Report', 0, 1, 'C');
+  $pdf->SetFont('helvetica', '', 12);
+
+  $sql = "SELECT u.full_name, u.email, u.phone, m.plan, m.expiry_date 
+          FROM users u 
+          JOIN memberships m ON u.user_id = m.user_id 
+          WHERE u.role = 'member'";
+  $result = mysqli_query($conn, $sql);
+
+  $tbl = '<table border="1" cellspacing="0" cellpadding="4">
+            <thead>
+                <tr style="background-color:#f2f2f2;">
+                    <th><b>Full Name</b></th>
+                    <th><b>Email</b></th>
+                    <th><b>Phone</b></th>
+                    <th><b>Fitness Level</b></th>
+                    <th><b>Workout Time</b></th>
+                </tr>
+            </thead><tbody>';
+
+  while ($row = mysqli_fetch_assoc($result)) {
+    $tbl .= '<tr>
+                <td>' . $row['full_name'] . '</td>
+                <td>' . $row['email'] . '</td>
+                <td>' . $row['phone'] . '</td>
+                <td>' . $row['fitness_level'] . '</td>
+                <td>' . $row['workout_time'] . '</td>
+            </tr>';
+  }
+
+  $tbl .= '</tbody></table>';
+  $pdf->writeHTML($tbl, true, false, false, false, '');
+
+  ob_end_clean(); // Clean the buffer before sending PDF
+  $pdf->Output('Member_Report.pdf', 'D'); // Send PDF as download
+  exit();
+}
+
 ?>
 <?php include("php/adminMember_server.php"); ?>
 
@@ -70,16 +118,16 @@ session_start();
         <th>Full Name</th>
         <th>Email</th>
         <th>Phone Number</th>
-        <th>Membership Type</th>
-        <th>Status</th>
+        <th>Fitness Level</th>
+        <th>Workout Time</th>
         <th>Actions</th>
       </tr>
     </thead>  
     <tbody id="member-table-body">
       
       <?php
-        $sql = "SELECT * 
-                FROM users 
+        $sql = "SELECT u.* 
+                FROM users u 
                 WHERE role = 'member'";
         $result = mysqli_query($conn, $sql);
 
@@ -93,16 +141,16 @@ session_start();
         <td><?php echo $row["full_name"]?></td>
         <td><?php echo $row["email"]?></td>
         <td><?php echo $row["phone"]?></td>
-        <td>Not Defined</td>
-        <td>Not Defined</td>
+        <td><?php echo $row["fitness_level"]?></td>
+        <td><?php echo $row["workout_time"]?></td>
         <td>
         
 
 
           <!-- View Button -->
-          <button class="view-btn"><a href="#viewmember">View</a></button>
+          <button class="view-btn"><a href="#viewmember <?php echo $row['user_id']; ?>">View</a></button>
 
-          <div class="overlay" id="viewmember">
+          <div class="overlay" id="viewmember <?php echo $row['user_id']; ?>">
             <div class="viewwrapper">
                <a href="#" class="close">&times;</a>
                <div class="trainer-content">
@@ -118,8 +166,7 @@ session_start();
                                 <h5>Phone No: <span><?php echo $row["phone"]?></span></h5>
                                 <h5>DOB: <span><?php echo $row["dob"]?></span></h5>
                                 <h5>Gender: <span><?php echo $row["gender"]?></span></h5>
-                                <h5>Membership Type: <span>Not Defined</span></h5>
-
+                                <!-- <h5>Membership Type: <span><?php echo $row["plan"]?></span></h5> -->
                             </div>
                         </div>
                     </div>

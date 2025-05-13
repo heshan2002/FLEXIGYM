@@ -198,9 +198,9 @@ if (isset($_POST['generate_trainer_pdf'])) {
         <td><?php echo $row["availability"]?></td>
         <td>
           <!-- View Button -->
-          <button class="view-btn"><a href="#viewtrainer">View</a></button>
+          <button class="view-btn"><a href="#viewtrainer<?php echo $row['trainer_id']; ?>">View</a></button>
 
-          <div class="overlay" id="viewtrainer">
+          <div class="overlay" id="viewtrainer<?php echo $row['trainer_id']; ?>">
             <div class="viewwrapper">
                <a href="#" class="close">&times;</a>
                <div class="trainer-content">
