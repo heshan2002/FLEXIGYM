@@ -6,6 +6,7 @@ session_start();
 
 
 
+<<<<<<< Updated upstream
 
 // =================== Generate PDF ===================
 if (isset($_POST['generate_trainer_pdf'])) {
@@ -46,6 +47,8 @@ if (isset($_POST['generate_trainer_pdf'])) {
   $pdf->Output('Trainer_Report.pdf', 'D'); // Send PDF as download
   exit();
 }
+=======
+>>>>>>> Stashed changes
 
 ?>
 <?php include("php/adminTrainer_server.php"); ?>

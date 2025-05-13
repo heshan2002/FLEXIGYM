@@ -7,6 +7,7 @@ require_once('php/tcpdf/tcpdf.php');
 session_start();
 
 
+<<<<<<< Updated upstream
 
 // =================== Generate PDF ===================
 if (isset($_POST['generate_member_pdf'])) {
@@ -50,6 +51,8 @@ if (isset($_POST['generate_member_pdf'])) {
   $pdf->Output('Member_Report.pdf', 'D'); // Send PDF as download
   exit();
 }
+=======
+>>>>>>> Stashed changes
 
 ?>
 <?php include("php/adminMember_server.php"); ?>
