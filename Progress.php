@@ -48,7 +48,7 @@ session_start();
                                 <li><a href="./about-us.php">About us</a></li>
                                 <li><a href="./Plans.php">PLANS</a></li>
                                 <li><a href="./Trainers.php">TRAINERS</a></li>
-                                <li><a href="./Progress.php">PROGRESS</a></li>
+                                <li><a href="http://localhost/ap/ap/">PROGRESS</a></li>
                                 <li><a href="./contact.php">Contact</a></li>
                                 <li class="search-btn search-trigger"><i class="fa fa-search"></i></li>
                             </ul>
