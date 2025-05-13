@@ -27,8 +27,30 @@ $user_data = mysqli_fetch_assoc($result);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <link rel="stylesheet" href="css/UserProfile.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 <body class="myprofile">
+
+<header class="flexigym-header">
+    <nav class="flexigym-nav">
+      <ul class="flexigym-nav-left">
+        <li><a href="./index.php">Home</a></li>
+        <li><a href="./about-us.php">About us</a></li>
+        <li><a href="./Plans.php">PLANS</a></li>
+        <li><a href="./Trainers.php">MY WORKOUTS</a></li>
+        <li><a href="./Progress.php">PROGRESS</a></li>
+        <li><a href="./contact.php">Contact</a></li>
+      </ul>
+      <ul class="flexigym-nav-right">
+        <li><a href="#"><i class="fas fa-search"></i></a></li>
+        <li><a href="Login.php">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
     <form action="php/EditUser_Server.php" method="post" onsubmit="return confirmUpdate()">
         <div class="container">
             <div class="sidebar">
@@ -40,7 +62,7 @@ $user_data = mysqli_fetch_assoc($result);
                         <p>Current Fitness Level : <span><?php echo htmlspecialchars($user_data['fitness_level']); ?></span></p>
                         <p>Preferred Workout Time : <span><?php echo htmlspecialchars($user_data['workout_time']); ?></span></p>
                     </div>
-                    <button type="button" class="profile-btn" onclick="window.location.href='MembershipPlans.php'">Upgrade Membership</button>
+                    <!-- <button type="button" class="profile-btn" onclick="window.location.href='MembershipPlans.php'">Upgrade Membership</button> -->
                 </div>
             </div>
 
