@@ -6,10 +6,7 @@ require_once('php/tcpdf/tcpdf.php');
 
 session_start();
 
-if (!isset($_SESSION["email"])) {
-  header("location:Login.php");
-  exit();
-}
+
 
 // =================== Generate PDF ===================
 if (isset($_POST['generate_member_pdf'])) {
@@ -82,7 +79,7 @@ if (isset($_POST['generate_member_pdf'])) {
   <a href="AdminTrainers.php"><i class="fa fa-user-tie" style="margin: 15px 10px 15px 15px;"></i>Trainers</a>
   <a href="Adminworkout.php"><i class='fa fa-dumbbell' style='margin: 15px 10px 15px 15px;'></i>Workouts</a>
   <a href="Adminassigntrainer.php"><i class='fa fa-user' style='margin: 15px 10px 15px 15px;' ></i>Asign Trainers</a>
-  <a href="#"><i class='fa fa-book' style='margin: 15px 10px 15px 15px;' ></i>Plans</a>
+  <a href="createplan.php"><i class='fa fa-book' style='margin: 15px 10px 15px 15px;' ></i>Plans</a>
   
   <!-- <a href="#"><i class='fa fa-user-circle-o' style='margin: 15px 10px 15px 15px;' ></i>Profile</a> -->
  
@@ -126,8 +123,8 @@ if (isset($_POST['generate_member_pdf'])) {
     <tbody id="member-table-body">
       
       <?php
-        $sql = "SELECT u.* , m.plan, m.expiry_date 
-                FROM users u JOIN memberships m ON u.user_id = m.user_id 
+        $sql = "SELECT * 
+                FROM users 
                 WHERE role = 'member'";
         $result = mysqli_query($conn, $sql);
 
@@ -141,8 +138,8 @@ if (isset($_POST['generate_member_pdf'])) {
         <td><?php echo $row["full_name"]?></td>
         <td><?php echo $row["email"]?></td>
         <td><?php echo $row["phone"]?></td>
-        <td><?php echo $row["plan"]?></td>
-        <td><?php echo $row["expiry_date"]?></td>
+        <td>Not Defined</td>
+        <td>Not Defined</td>
         <td>
         
 
@@ -166,7 +163,8 @@ if (isset($_POST['generate_member_pdf'])) {
                                 <h5>Phone No: <span><?php echo $row["phone"]?></span></h5>
                                 <h5>DOB: <span><?php echo $row["dob"]?></span></h5>
                                 <h5>Gender: <span><?php echo $row["gender"]?></span></h5>
-                                <h5>Membership Type: <span><?php echo $row["plan"]?></span></h5>
+                                <h5>Membership Type: <span>Not Defined</span></h5>
+
                             </div>
                         </div>
                     </div>

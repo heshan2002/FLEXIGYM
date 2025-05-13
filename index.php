@@ -102,12 +102,12 @@ require("php/logout.php");
     <!-- Hero Slider Section Begin -->
     <section class="hero-slider">
         <div class="slide-items owl-carousel">
-            <div class="single-slide set-bg active" data-setbg="img/bg.jpg">
+            <div class="single-slide set-bg active" data-setbg="img/bga.jpg">
                 <a href="https://www.youtube.com/watch?v=SEVuD_djKrU" class="play-btn pop-up"><i class="fa fa-play"></i></a>
                 <h1>FLEXIGYM</h1>
                 <a href="SignUp.php" class="primary-btn">Join Us</a>
             </div>
-            <div class="single-slide set-bg" data-setbg="img/bg-2.jpg">
+            <div class="single-slide set-bg" data-setbg="img/bga-2.jpg">
                 <a href="https://www.youtube.com/watch?v=SEVuD_djKrU" class="play-btn pop-up"><i class="fa fa-play"></i></a>
                 <h1>FLEXIGYM</h1>
                 <a href="SignUp.php" class="primary-btn">Join Us</a>
@@ -134,8 +134,7 @@ require("php/logout.php");
                                 <img src="img/features/icon-1.png" alt="">
                             </div>
                             <h5>Amazing Setting</h5>
-                            <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
-                                nulla pretium, vitae ornare leo.</p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
@@ -149,8 +148,7 @@ require("php/logout.php");
                                 <img src="img/features/icon-2.png" alt="">
                             </div>
                             <h5>Best Trainers</h5>
-                            <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
-                                nulla pretium, vitae ornare leo.</p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
@@ -163,9 +161,8 @@ require("php/logout.php");
                             <div class="feature-icon">
                                 <img src="img/features/icon-3.png" alt="">
                             </div>
-                            <h5>Diet Plans</h5>
-                            <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
-                                nulla pretium, vitae ornare leo.</p>
+                            <h5>Plans</h5>
+                            <p></p>
                         </div>
                     </div>
                 </div>
@@ -189,32 +186,28 @@ require("php/logout.php");
                     <div class="single-service">
                         <img src="img/icon-1.png" alt="">
                         <h5>Pilates</h5>
-                        <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis nulla
-                            pretium.</p>
+                        <p></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-service c-text">
                         <img src="img/icon-2.png" alt="">
                         <h5>Free Lifting</h5>
-                        <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis nulla
-                            pretium.</p>
+                        <p></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-service">
                         <img src="img/icon-3.png" alt="">
                         <h5>Yoga</h5>
-                        <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis nulla
-                            pretium.</p>
+                        <p></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-service">
                         <img src="img/icon-4.png" alt="">
                         <h5>Spinning</h5>
-                        <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis nulla
-                            pretium.</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -255,7 +248,7 @@ require("php/logout.php");
                 <div class="col-md-4">
                     <div class="single-trainer">
                         <div class="trainer-img">
-                            <img src="img/trainer/trainer-2.jpg" alt="">
+                            <img src="img/trainer.jpg" alt="">
                             <div class="img-hover">
                                 <a href="#"><i class="fa fa-plus"></i></a>
                             </div>
@@ -268,7 +261,7 @@ require("php/logout.php");
                 <div class="col-md-4">
                     <div class="single-trainer">
                         <div class="trainer-img">
-                            <img src="img/trainer/trainer-3.jpg" alt="">
+                            <img src="img/trainer1.jpg" alt="">
                             <div class="img-hover">
                                 <a href="#"><i class="fa fa-plus"></i></a>
                             </div>
@@ -302,28 +295,14 @@ require("php/logout.php");
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="membership-card set-bg" data-setbg="img/m-card.jpg">
-                        <div class="membership-details">
-                            <div class="up-title">
-                                <span>Next</span>
-                                <h5>Membership Cards</h5>
-                            </div>
-                            <div class="discount">
-                                <h1>25% <span>Discount</span></h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
                 <div class="col-lg-4 col-md-12">
                     <div class="member-sign-up set-bg" data-setbg="img/signup-bg.jpg">
                         <div class="up-title">
                             <span>New</span>
                             <h5>Personal Trainer</h5>
                         </div>
-                        <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis nulla
-                            pretium.Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl
-                            quis nulla pretium.</p>
+                        <p></p>
                         <div class="member-signup-btn">
                             <a href="#" class="primary-btn">Sign up Now</a>
                         </div>
@@ -368,11 +347,7 @@ require("php/logout.php");
                         <div class="footer-icon-img">
                             <img src="img/footer-icon.png" alt="">
                         </div>
-                        <div class="copyright">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </div>
+                       
                     </div>
                 </div>
             </div>

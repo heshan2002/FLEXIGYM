@@ -127,9 +127,7 @@ session_start();
             <div class="row">
                 <div class="col-lg-7">
                     <div class="about-text">
-                        <p class="t-text">Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit
-                            nisl quis nulla pretium, vitae ornare leoltricies arcu a tellus pellentesque ultrices. Ut
-                            euismod luctus elit id eleifend. Donec semper massa a imperdiet mattis. In vel mattis neque, nec ultricies lectus. Morbi auctor lacus nec hendrerit consectetur. </p>
+                        <p class="t-text">FlexiGym is a cutting-edge gym management system designed to enhance the fitness experience for both members and trainers. We strive to provide a seamless and personalized fitness journey by offering advanced features, including workout tracking, trainer management, and progress monitoring. Our goal is to make fitness more accessible, efficient, and engaging for everyone. </p>
                         <div class="about-features">
                             <div class="about-features-item">
                                 <div class="about-feature-img">
@@ -137,8 +135,7 @@ session_start();
                                 </div>
                                 <div class="about-feature-text">
                                     <h4>We have the best Gym Trainers</h4>
-                                    <p>Arcu a tellus pellentesque ultrices. Ut euismod luctus elit id eleifend. Donec
-                                        semper massa a imperdiet mattis. In vel mattis neque, nec ultricies lectus. </p>
+                                    <p> </p>
                                 </div>
                             </div>
                             <div class="about-features-item">
@@ -147,9 +144,7 @@ session_start();
                                 </div>
                                 <div class="about-feature-text">
                                     <h4>The best fitness facilities</h4>
-                                    <p>Arcu a tellus pellentesque ultrices. Ut euismod luctus elit id eleifend. Donec
-                                        semper massa a imperdiet mattis. In vel mattis neque, nec ultricies lectus. </p>
-                                </div>
+                                    <p>
                             </div>
                         </div>
                         <a href="#" class="primary-btn">Read about topgym</a>
@@ -176,7 +171,9 @@ session_start();
             <div class="row">
                 <div class="col-lg-5">
                     <div class="skill-text">
-                        <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis nulla pretium. Dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis nulla pretium. Dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis nulla pretium. Dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis nulla pretium.</p>
+                        <p>At FlexiGym, we understand that every fitness journey is unique. Our gym management system offers a tailored approach to suit the needs of both members and trainers. With user-friendly interfaces, real-time progress tracking, and personalized workout plans, we ensure that each individual receives the attention and support they deserve. Our system helps gym owners and trainers manage operations effortlessly, while providing members with an engaging and motivating fitness experience. Choose FlexiGym for a smarter, more efficient way to reach your fitness goals.
+
+</p>
                     </div>
                 </div>
                 <div class="col-lg-6 offset-lg-1">
@@ -261,21 +258,19 @@ session_start();
             <div class="row">
                 <div class="col-lg-6">
                     <div class="testimonial-content">
-                        <div class="testimonial-pic set-bg" data-setbg="img/testimonial/testimonial-1.png"></div>
+                        <div class="testimonial-pic set-bg" data-setbg="img/trainer.jpg"></div>
                         <div class="testimonial-text">
                             <h4>Megan Smith, <span>Client</span></h4>
-                            <p>Arcu a tellus pellentesque ultrices. Ut euismod luctus elit id eleifend. Donec semper
-                                massa a imperdiet mattis. In vel mattis neque, nec ultricies lectus. </p>
+                            <p> </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="testimonial-content">
-                        <div class="testimonial-pic set-bg" data-setbg="img/testimonial/testimonial-2.png"></div>
+                        <div class="testimonial-pic set-bg" data-setbg="img/trainer1.jpg"></div>
                         <div class="testimonial-text">
                             <h4>Michael Joe, <span>Client</span></h4>
-                            <p>Arcu a tellus pellentesque ultrices. Ut euismod luctus elit id eleifend. Donec semper
-                                massa a imperdiet mattis. In vel mattis neque, nec ultricies lectus. </p>
+                            <p> </p>
                         </div>
                     </div>
                 </div>
@@ -291,8 +286,7 @@ session_start();
                     <div class="about-callto-text">
                         <div class="cl-left">
                             <h2>Join our gym now!</h2>
-                            <p>Arcu a tellus pellentesque ultrices. Ut euismod luctus elit id eleifend. Donec semper
-                                massa a imperdiet mattis. </p>
+                            <p></p>
                         </div>
                         <div class="cl-right">
                             <a href="#" class="primary-btn">Join</a>
@@ -338,11 +332,7 @@ session_start();
                         <div class="footer-icon-img">
                             <img src="img/footer-icon.png" alt="">
                         </div>
-                        <div class="copyright">
-                           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </div>
+                        
                     </div>
                 </div>
             </div>

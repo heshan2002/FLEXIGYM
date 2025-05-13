@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="FlexiGym Payment">
+    <meta name="keywords" content="FlexiGym, fitness, payment, gym">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FlexiGym | Payment</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,700,900" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/barfiller.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <style>
+        .payment-form {
+            background: #f7f7f7;
+            padding: 30px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .payment-summary {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-control {
+            margin-bottom: 15px;
+        }
+        .payment-method-selector {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .payment-method-selector .btn {
+            margin: 0 5px;
+            min-width: 150px;
+        }
+        .btn-payment-method.active {
+            background-color: #fc0254;
+            color: white;
+            border-color: #fc0254;
+        }
+        #slip-upload-form {
+            display: none;
+        }
+        .upload-preview {
+            max-width: 300px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main-menu">
+                        <div class="logo">
+                            <a href="./index.html">
+                                <img src="img/logo.gif" alt="">
+                            </a>
+                        </div>
+                        <nav class="mobile-menu">
+                            <ul>
+                                <li><a href="./index.php">Home</a></li>
+                                <li><a href="./about-us.php">About us</a></li>
+                                <li><a href="./Plans.php">PLANS</a></li>
+                                <li><a href="./Trainers.php">TRAINERS</a></li>
+                                <li><a href="./Progress.php">PROGRESS</a></li>
+                                <li><a href="./contact.php">Contact</a></li>
+                                <li class="search-btn search-trigger"><i class="fa fa-search"></i></li>
+                            </ul>
+                        </nav>
+                        <div id="mobile-menu-wrap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+    
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-area set-bg" data-setbg="img/classes/classes-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb-content">
+                        <h2>Payment</h2>
+                        <div class="links">
+                            <a href="./index.html">Home</a>
+                            <a href="./membership-plans.html">Membership Plans</a>
+                            <a href="./payment.html" class="rt-breadcrumb">Payment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Payment Section Begin -->
+    <section class="payment-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="payment-summary">
+                        <h4>Order Summary</h4>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <p>Selected Plan:</p>
+                                <h5 id="selected-plan">Loading...</h5>
+                            </div>
+                            <div class="col-6 text-right">
+                                <p>Amount:</p>
+                                <h5 id="plan-price">Loading...</h5>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Method Selection -->
+                    <div class="payment-method-selector">
+                        <h4 class="mb-3">Choose Payment Method</h4>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-outline-primary btn-payment-method active" data-method="card">Online Payment</button>
+                            <button type="button" class="btn btn-outline-primary btn-payment-method" data-method="slip">Upload Payment Slip</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Credit Card Payment Form -->
+                    <div class="payment-form" id="card-payment-form">
+                        <h4 class="mb-4">Payment Details</h4>
+                        <form id="payment-form">
+                            <div class="form-group">
+                                <label for="card-holder">Card Holder Name</label>
+                                <input type="text" id="card-holder" class="form-control" placeholder="Enter Card Holder Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="card-number">Card Number</label>
+                                <input type="text" id="card-number" class="form-control" placeholder="XXXX XXXX XXXX XXXX" required>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="expiry">Expiration Date</label>
+                                        <input type="text" id="expiry" class="form-control" placeholder="MM/YY" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" class="form-control" placeholder="XXX" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="billing-address">Billing Address</label>
+                                <textarea id="billing-address" class="form-control" rows="3" placeholder="Enter Billing Address" required></textarea>
+                            </div>
+                            <button type="submit" class="primary-btn">Complete Payment</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Slip Upload Form -->
+                    <div class="payment-form" id="slip-upload-form">
+                        <h4 class="mb-4">Upload Payment Slip</h4>
+                        <form id="slip-form">
+                            <div class="form-group">
+                                <label for="payer-name">Your Name</label>
+                                <input type="text" id="payer-name" class="form-control" placeholder="Enter Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="payment-date">Payment Date</label>
+                                <input type="date" id="payment-date" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="payment-amount">Amount Paid</label>
+                                <input type="number" id="payment-amount" class="form-control" placeholder="Enter amount" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="payment-reference">Payment Reference (if any)</label>
+                                <input type="text" id="payment-reference" class="form-control" placeholder="Enter reference number">
+                            </div>
+                            <div class="form-group">
+                                <label for="slip-file">Upload Payment Slip (Image/PDF)</label>
+                                <input type="file" id="slip-file" class="form-control" accept="image/*, application/pdf" required>
+                                <div class="mt-2">
+                                    <img id="slip-preview" class="upload-preview d-none" alt="Slip preview">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="additional-notes">Additional Notes</label>
+                                <textarea id="additional-notes" class="form-control" rows="3" placeholder="Any additional information"></textarea>
+                            </div>
+                            <button type="submit" class="primary-btn">Submit Payment Slip</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Payment Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-content">
+                        <div class="footer-logo">
+                            <a href="#"><img src="img/logo.png" alt=""></a>
+                        </div>
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="./home.html">Home</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Classes</a></li>
+                                <li><a href="#">Instructors</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="your Email">
+                                <button type="submit">Sign Up</button>
+                            </form>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                        </div>
+                        <div class="copyright">
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | FlexiGym
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/circle-progress.min.js"></script>
+    <script src="js/jquery.barfiller.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Payment processing JavaScript
+        $(document).ready(function() {
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const plan = urlParams.get('plan');
+            const price = urlParams.get('price');
+            
+            // Set plan details in page
+            if (plan) {
+                $('#selected-plan').text(plan.charAt(0).toUpperCase() + plan.slice(1) + ' Plan');
+            } else {
+                $('#selected-plan').text('No plan selected');
+            }
+            
+            if (price) {
+                $('#plan-price').text('$' + price);
+            } else {
+                $('#plan-price').text('$0.00');
+            }
+            
+            // Payment method selection
+            $('.btn-payment-method').on('click', function() {
+                $('.btn-payment-method').removeClass('active');
+                $(this).addClass('active');
+                
+                const method = $(this).data('method');
+                if (method === 'card') {
+                    $('#card-payment-form').show();
+                    $('#slip-upload-form').hide();
+                } else {
+                    $('#card-payment-form').hide();
+                    $('#slip-upload-form').show();
+                }
+            });
+            
+            // Preview uploaded payment slip
+            $('#slip-file').on('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        if (file.type.includes('image')) {
+                            $('#slip-preview').attr('src', e.target.result);
+                            $('#slip-preview').removeClass('d-none');
+                        } else {
+                            // If it's a PDF, just show a placeholder
+                            $('#slip-preview').addClass('d-none');
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // Form submission handler for credit card
+            $('#payment-form').on('submit', function(e) {
+                e.preventDefault();
+                
+                // Simple validation
+                if ($('#card-number').val() && $('#expiry').val() && $('#cvv').val()) {
+                    // In a real app, you would send this to a payment gateway
+                    alert('Payment processed successfully! Thank you for subscribing to the ' + 
+                          $('#selected-plan').text() + '.');
+                    
+                    // Redirect to index or profile page after successful payment
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Please complete all payment fields.');
+                }
+            });
+            
+            // Form submission handler for slip upload
+            $('#slip-form').on('submit', function(e) {
+                e.preventDefault();
+                
+                // Simple validation
+                if ($('#payer-name').val() && $('#payment-date').val() && $('#slip-file').val()) {
+                    // In a real app, you would upload the file to the server
+                    alert('Payment slip uploaded successfully! Your payment will be verified shortly. Thank you for subscribing to the ' + 
+                          $('#selected-plan').text() + '.');
+                    
+                    // Redirect to index or profile page after successful upload
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Please complete all required fields and upload a payment slip.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -120,14 +120,12 @@ session_start();
                     <div class="contact-info">
                         <div class="contact-details">
                             <h2>Get in Touch</h2>
-                            <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
-                                nulla pretium, vitae ornare leo.Aenean id auctor libero, gravida venenatis justo. Sed ut
-                                arcu nibh. Fusce lacinia arcu in ultrices finibus. Donec vestibulum imperdiet efficitur.
+                            <p>At FlexiGym, we are dedicated to helping you achieve your fitness goals. Whether you have questions about our plans, need assistance with your account, or want to learn more about our services, our team is here to support you. Reach out to us today, and we’ll get back to you as soon as possible. We’re excited to help you on your fitness journey!
                             </p>
                             <ul class="address">
-                                <li>Main Str, no 23, New York</li>
-                                <li>+546 990221 123</li>
-                                <li>Fitness@contact.com</li>
+                                <li>Colombo Sri Lanka</li>
+                                <li>+94 8888888</li>
+                                <li>Flexigym@contact.com</li>
                             </ul>
                         </div>
                         <div class="contact-form">
@@ -151,9 +149,11 @@ session_start();
                 </div>
             </div>
         </div>
-        <div class="map"><iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48359.89302507648!2d-73.95762813994347!3d40.75117343692072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2592bc7bab159%3A0x56156cc4c5ee8e31!2sLong+Island+City%2C+Queens%2C+NY%2C+USA!5e0!3m2!1sen!2sbd!4v1561474745218!5m2!1sen!2sbd"
-                style="border:0" allowfullscreen></iframe></div>
+        <div class="map">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.184926058244!2d79.95573831480394!3d6.9270784953122815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25943d3e0f999%3A0x9e9ab9a93b3bcf2f!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1633273621654!5m2!1sen!2sus"
+        style="border:0" allowfullscreen></iframe>
+</div>
     </section>
     <!-- Contact Section End -->
     <!-- Footer Section Begin -->
@@ -191,11 +191,7 @@ session_start();
                         <div class="footer-icon-img">
                             <img src="img/footer-icon.png" alt="">
                         </div>
-                        <div class="copyright">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </div>
+                        
                     </div>
                 </div>
             </div>

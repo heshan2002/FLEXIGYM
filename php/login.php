@@ -1,21 +1,12 @@
 <?php
-
-//session start
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} else{
-    session_destroy();
-    session_start();
-}
-
-include "database.php"; 
+session_start();
+include "database.php"; // Ensure database connection
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    
+    // Check if the user exists
     $sql = "SELECT * FROM users WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
@@ -24,28 +15,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $result->fetch_assoc();
 
     if ($user) {
-
-       
+        // Check for SHA256 password (Admin)
         if (hash('sha256', $password) === $user["password"] || password_verify($password, $user["password"])) {
-
             $_SESSION["user_id"] = $user["user_id"];
             $_SESSION["role"] = $user["role"];
             $_SESSION["full_name"] = $user["full_name"];
-            $_SESSION["email"] = $user["email"];
-            
+
+            // Redirect based on role
             if ($user["role"] === "admin") {
                 header("Location: ../AdminDashboard.php");
             } elseif ($user["role"] === "trainer") {
                 header("Location: ../trainerhome.html");
             } else {
-                header("Location: ../index.php"); 
+                header("Location: ../index.php"); // Member
             }
             exit();
         } else {
-            echo "<script>alert('Invalid Password!');window.location.href='../Login.php';</script>";
+            echo "<script>alert('Invalid Password!');window.location.href='../Login.html';</script>";
         }
     } else {
-        echo "<script>alert('User Not Found!');window.location.href='../Login.php';</script>";
+        echo "<script>alert('User Not Found!');window.location.href='../Login.html';</script>";
     }
 }
 ?>
