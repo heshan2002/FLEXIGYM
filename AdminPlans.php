@@ -210,7 +210,7 @@ if (isset($_POST['generate_plans_pdf'])) {
   <div class="row-ad3">
     <h2 class="header-title">Membership Plans Management</h2>
     <div class="header-right">
-      <button class="logout-btn"><a href="php/logout.php">Log Out</a></button>
+      <button class="logout-btn"><a href="Login.php">Log Out</a></button>
       <img src="./img/Admin.jpg" class="Profile-img" alt="Admin" width="70" height="70" style="clip-path: circle(50%);">
     </div>
   </div>
