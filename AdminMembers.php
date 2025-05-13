@@ -6,57 +6,6 @@ require_once('php/tcpdf/tcpdf.php');
 
 session_start();
 
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-// =================== Generate PDF ===================
-if (isset($_POST['generate_member_pdf'])) {
-  $pdf = new TCPDF();
-  $pdf->AddPage();
-  $pdf->SetFont('helvetica', 'B', 16);
-  $pdf->Cell(0, 10, 'FlexiGym Member Report', 0, 1, 'C');
-  $pdf->SetFont('helvetica', '', 12);
-
-  $sql = "SELECT u.full_name, u.email, u.phone, m.plan, m.expiry_date 
-          FROM users u 
-          JOIN memberships m ON u.user_id = m.user_id 
-          WHERE u.role = 'member'";
-  $result = mysqli_query($conn, $sql);
-
-  $tbl = '<table border="1" cellspacing="0" cellpadding="4">
-            <thead>
-                <tr style="background-color:#f2f2f2;">
-                    <th><b>Full Name</b></th>
-                    <th><b>Email</b></th>
-                    <th><b>Phone</b></th>
-                    <th><b>Plan</b></th>
-                    <th><b>Expiry Date</b></th>
-                </tr>
-            </thead><tbody>';
-
-  while ($row = mysqli_fetch_assoc($result)) {
-    $tbl .= '<tr>
-                <td>' . $row['full_name'] . '</td>
-                <td>' . $row['email'] . '</td>
-                <td>' . $row['phone'] . '</td>
-                <td>' . $row['plan'] . '</td>
-                <td>' . $row['expiry_date'] . '</td>
-            </tr>';
-  }
-
-  $tbl .= '</tbody></table>';
-  $pdf->writeHTML($tbl, true, false, false, false, '');
-
-  ob_end_clean(); // Clean the buffer before sending PDF
-  $pdf->Output('Member_Report.pdf', 'D'); // Send PDF as download
-  exit();
-}
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-
 ?>
 <?php include("php/adminMember_server.php"); ?>
 
