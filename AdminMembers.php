@@ -8,6 +8,7 @@ session_start();
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 // =================== Generate PDF ===================
 if (isset($_POST['generate_member_pdf'])) {
@@ -51,6 +52,8 @@ if (isset($_POST['generate_member_pdf'])) {
   $pdf->Output('Member_Report.pdf', 'D'); // Send PDF as download
   exit();
 }
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 

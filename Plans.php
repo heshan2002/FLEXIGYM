@@ -483,12 +483,15 @@ session_start();
                                 <li class="search-btn search-trigger"><i class="fa fa-search"></i></li>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                                 <!-- Show Logout if logged in, otherwise show Login -->
                                 <?php if (isset($_SESSION["user_id"])): ?>
                                 <li><a href="Login.php" class="mobile-menu">Logout</a></li>
                             <?php else: ?>
                                 <li><a href="Login.html" class="mobile-menu">Login</a></li>
                             <?php endif; ?>
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -525,6 +528,7 @@ session_start();
     <section class="membership-plans spad">
         <div class="container">
             <div class="row">
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
                 <div class="col-md-4 col-sm-6">
@@ -642,6 +646,22 @@ session_start();
                             <h4>Silver Plan</h4>
                             <div class="price">
                                 <h2>$29.99</h2>
+=======
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Choose Your Membership Plan</h2>
+                        <p>Select the plan that best fits your fitness goals and lifestyle</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Silver Plan -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="membership-item">
+                        <div class="mi-title">
+                            <h4>Silver Plan</h4>
+                            <div class="price">
+                                <h2>$29.99</h2>
                                 <span>/ month</span>
                             </div>
                         </div>
@@ -730,10 +750,57 @@ session_start();
                             <h4>Platinum Plan</h4>
                             <div class="price">
                                 <h2>$99.99</h2>
+>>>>>>> Stashed changes
                                 <span>/ month</span>
                             </div>
                         </div>
                         <ul>
+<<<<<<< Updated upstream
+                            <li>Access to gym facilities</li>
+                            <li>Basic fitness classes</li>
+                            <li>Locker usage</li>
+                            <li>Free WiFi</li>
+                            <li>Access from 8am to 5pm</li>
+                        </ul>
+                        <a href="payment.html?plan=silver&price=29.99" class="primary-btn membership-btn">Choose Plan</a>
+                    </div>
+                </div>
+                
+                <!-- Gold Plan -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="membership-item gold-item">
+                        <div class="mi-title">
+                            <h4>Gold Plan</h4>
+                            <div class="price">
+                                <h2>$59.99</h2>
+                                <span>/ month</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>24/7 Access to gym facilities</li>
+                            <li>All fitness classes included</li>
+                            <li>Personal trainer (1 session/week)</li>
+                            <li>Towel service</li>
+                            <li>Nutritional consultation</li>
+                            <li>Free parking</li>
+                        </ul>
+                        <a href="payment.html?plan=gold&price=59.99" class="primary-btn membership-btn">Choose Plan</a>
+                    </div>
+                </div>
+                
+                <!-- Platinum Plan -->
+                <div class="col-lg-4 col-md=6">
+                    <div class="membership-item platinum-item">
+                        <div class="mi-title">
+                            <h4>Platinum Plan</h4>
+                            <div class="price">
+                                <h2>$99.99</h2>
+                                <span>/ month</span>
+                            </div>
+                        </div>
+                        <ul>
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                             <li>24/7 Access to all facilities</li>
@@ -746,6 +813,7 @@ session_start();
                         </ul>
                         <a href="payment.html?plan=platinum&price=99.99" class="primary-btn membership-btn">Choose Plan</a>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     </div>
 >>>>>>> Stashed changes
                 </div>
@@ -818,33 +886,47 @@ session_start();
                         </table>
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div>
         </div>
     </section>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <!-- Compare Plans Section End -->
 
     <!-- Custom Plans Section Begin -->
     <section class="custom-plans-section">
 =======
+=======
+>>>>>>> Stashed changes
     <!-- Membership Plans Section End -->
 
     <!-- Compare Plans Section Begin -->
     <section class="compare-section">
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                         <h2>Custom Fitness Plans</h2>
                         <p>Check out these custom fitness plans created by our community or create your own</p>
+=======
+                        <h2>Compare Plans</h2>
+                        <p>See which plan offers the features you need</p>
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div>
             <div class="row">
+<<<<<<< Updated upstream
                 <div class="col-lg-12 create-plan-btn-container">
                     <a href="create-plan.html" class="create-plan-btn">
                         <i class="fa fa-plus-circle"></i> Create Your Own Plan
@@ -858,6 +940,8 @@ session_start();
                 </div>
             </div>
             <div class="row">
+=======
+>>>>>>> Stashed changes
                 <div class="col-lg-12">
                     <div class="table-responsive">
                         <table class="compare-table">
@@ -933,6 +1017,9 @@ session_start();
                     </a>
                 </div>
             </div>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             <div class="row" id="custom-plans-container">
                 <!-- Custom plans will be dynamically inserted here -->
@@ -1026,11 +1113,14 @@ session_start();
                         </div>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                         <div class="footer-icon-img">
                             <img src="img/footer-icon.png" alt="">
                         </div>
                         
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                         <div class="copyright">

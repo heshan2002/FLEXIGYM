@@ -25,7 +25,11 @@
   <a href="Adminassigntrainer.php"><i class='fa fa-user' style='margin: 15px 10px 15px 15px;' ></i>Asign Trainers</a>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   <a href="AdminPlans.php"><i class='fa fa-book' style='margin: 15px 10px 15px 15px;' ></i>Plans</a>
+=======
+  <a href="createplan.php"><i class='fa fa-book' style='margin: 15px 10px 15px 15px;' ></i>Plans</a>
+>>>>>>> Stashed changes
 =======
   <a href="createplan.php"><i class='fa fa-book' style='margin: 15px 10px 15px 15px;' ></i>Plans</a>
 >>>>>>> Stashed changes
