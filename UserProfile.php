@@ -40,7 +40,7 @@ $user_data = mysqli_fetch_assoc($result);
                         <p>Current Fitness Level : <span><?php echo htmlspecialchars($user_data['fitness_level']); ?></span></p>
                         <p>Preferred Workout Time : <span><?php echo htmlspecialchars($user_data['workout_time']); ?></span></p>
                     </div>
-                    <!-- <button type="button" class="profile-btn">Upgrade Membership</button> -->
+                    <button type="button" class="profile-btn" onclick="window.location.href='MembershipPlans.php'">Upgrade Membership</button>
                 </div>
             </div>
 

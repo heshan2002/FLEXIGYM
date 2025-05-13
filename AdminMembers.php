@@ -82,7 +82,7 @@ if (isset($_POST['generate_member_pdf'])) {
   <a href="AdminTrainers.php"><i class="fa fa-user-tie" style="margin: 15px 10px 15px 15px;"></i>Trainers</a>
   <a href="Adminworkout.php"><i class='fa fa-dumbbell' style='margin: 15px 10px 15px 15px;'></i>Workouts</a>
   <a href="Adminassigntrainer.php"><i class='fa fa-user' style='margin: 15px 10px 15px 15px;' ></i>Asign Trainers</a>
-  <a href="#"><i class='fa fa-book' style='margin: 15px 10px 15px 15px;' ></i>Plans</a>
+  <a href="createplan.php"><i class='fa fa-book' style='margin: 15px 10px 15px 15px;' ></i>Plans</a>
   
   <!-- <a href="#"><i class='fa fa-user-circle-o' style='margin: 15px 10px 15px 15px;' ></i>Profile</a> -->
  

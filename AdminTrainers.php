@@ -4,11 +4,6 @@ require_once('php/tcpdf/tcpdf.php');
 
 session_start();
 
-if (!isset($_SESSION["email"])) {
-  header("location:Login.php");
-  exit();
-}
-
 // =================== Generate PDF ===================
 if (isset($_POST['generate_trainer_pdf'])) {
   $pdf = new TCPDF();
@@ -48,6 +43,7 @@ if (isset($_POST['generate_trainer_pdf'])) {
   $pdf->Output('Trainer_Report.pdf', 'D'); // Send PDF as download
   exit();
 }
+
 
 ?>
 <?php include("php/adminTrainer_server.php"); ?>
@@ -90,7 +86,7 @@ if (isset($_POST['generate_trainer_pdf'])) {
   <a href="AdminTrainers.php"><i class="fa fa-user-tie" style="margin: 15px 10px 15px 15px;"></i>Trainers</a>
   <a href="Adminworkout.php"><i class='fa fa-dumbbell' style='margin: 15px 10px 15px 15px;'></i>Workouts</a>
   <a href="Adminassigntrainer.php"><i class='fa fa-user' style='margin: 15px 10px 15px 15px;' ></i>Asign Trainers</a>
-  <a href="#"><i class='fa fa-book' style='margin: 15px 10px 15px 15px;' ></i>Plans</a>
+  <a href="createplan.php"><i class='fa fa-book' style='margin: 15px 10px 15px 15px;' ></i>Plans</a>
   
  
 </div> <!--adminnav-->
