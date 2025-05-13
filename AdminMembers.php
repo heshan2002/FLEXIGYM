@@ -31,8 +31,8 @@ if (isset($_POST['generate_member_pdf'])) {
                     <th><b>Full Name</b></th>
                     <th><b>Email</b></th>
                     <th><b>Phone</b></th>
-                    <th><b>Plan</b></th>
-                    <th><b>Expiry Date</b></th>
+                    <th><b>Fitness Level</b></th>
+                    <th><b>Workout Time</b></th>
                 </tr>
             </thead><tbody>';
 
@@ -41,8 +41,8 @@ if (isset($_POST['generate_member_pdf'])) {
                 <td>' . $row['full_name'] . '</td>
                 <td>' . $row['email'] . '</td>
                 <td>' . $row['phone'] . '</td>
-                <td>' . $row['plan'] . '</td>
-                <td>' . $row['expiry_date'] . '</td>
+                <td>' . $row['fitness_level'] . '</td>
+                <td>' . $row['workout_time'] . '</td>
             </tr>';
   }
 
@@ -118,16 +118,16 @@ if (isset($_POST['generate_member_pdf'])) {
         <th>Full Name</th>
         <th>Email</th>
         <th>Phone Number</th>
-        <th>Membership Type</th>
-        <th>Status</th>
+        <th>Fitness Level</th>
+        <th>Workout Time</th>
         <th>Actions</th>
       </tr>
     </thead>  
     <tbody id="member-table-body">
       
       <?php
-        $sql = "SELECT u.* , m.plan, m.expiry_date 
-                FROM users u JOIN memberships m ON u.user_id = m.user_id 
+        $sql = "SELECT u.* 
+                FROM users u 
                 WHERE role = 'member'";
         $result = mysqli_query($conn, $sql);
 
@@ -141,16 +141,16 @@ if (isset($_POST['generate_member_pdf'])) {
         <td><?php echo $row["full_name"]?></td>
         <td><?php echo $row["email"]?></td>
         <td><?php echo $row["phone"]?></td>
-        <td><?php echo $row["plan"]?></td>
-        <td><?php echo $row["expiry_date"]?></td>
+        <td><?php echo $row["fitness_level"]?></td>
+        <td><?php echo $row["workout_time"]?></td>
         <td>
         
 
 
           <!-- View Button -->
-          <button class="view-btn"><a href="#viewmember">View</a></button>
+          <button class="view-btn"><a href="#viewmember <?php echo $row['user_id']; ?>">View</a></button>
 
-          <div class="overlay" id="viewmember">
+          <div class="overlay" id="viewmember <?php echo $row['user_id']; ?>">
             <div class="viewwrapper">
                <a href="#" class="close">&times;</a>
                <div class="trainer-content">
@@ -166,7 +166,7 @@ if (isset($_POST['generate_member_pdf'])) {
                                 <h5>Phone No: <span><?php echo $row["phone"]?></span></h5>
                                 <h5>DOB: <span><?php echo $row["dob"]?></span></h5>
                                 <h5>Gender: <span><?php echo $row["gender"]?></span></h5>
-                                <h5>Membership Type: <span><?php echo $row["plan"]?></span></h5>
+                                <!-- <h5>Membership Type: <span><?php echo $row["plan"]?></span></h5> -->
                             </div>
                         </div>
                     </div>

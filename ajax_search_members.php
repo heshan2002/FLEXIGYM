@@ -3,14 +3,14 @@ require("php/database.php");
 
 $search = isset($_GET['search']) ? mysqli_real_escape_string($conn, $_GET['search']) : '';
 
-$sql = "SELECT u.*, m.plan, m.expiry_date 
+$sql = "SELECT u.*
         FROM users u 
-        JOIN memberships m ON u.user_id = m.user_id 
         WHERE u.role = 'member' AND (
             u.full_name LIKE '%$search%' OR 
             u.email LIKE '%$search%' OR 
             u.phone LIKE '%$search%' OR 
-            m.plan LIKE '%$search%'
+            u.fitness_level LIKE '%$search%' OR 
+            u.workout_time LIKE '%$search%'
         )";
 
 $result = mysqli_query($conn, $sql);
@@ -21,8 +21,8 @@ if (mysqli_num_rows($result) > 0) {
             <td>{$row['full_name']}</td>
             <td>{$row['email']}</td>
             <td>{$row['phone']}</td>
-            <td>{$row['plan']}</td>
-            <td>{$row['expiry_date']}</td>
+            <td>{$row['fitness_level']}</td>
+            <td>{$row['workout_time']}</td>
             <td>
               <button class='view-btn'><a href='#viewmember'>View</a></button>
               <button class='delete-btn'><a href='AdminMembers.php?delete_memberId={$row["user_id"]}'>Delete</a></button>
