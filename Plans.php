@@ -1,31 +1,17 @@
 <?php
 session_start();
-require("php/database.php");
-
-$user_role = isset($_SESSION["role"]) ? $_SESSION["role"] : "guest";
-$user_id = isset($_SESSION["user_id"]) ? $_SESSION["user_id"] : null;
-
-// Get all active plans
-$sql = "SELECT * FROM membership_plans WHERE status = 'active' ORDER BY price ASC";
-$result = $conn->query($sql);
-
-$plans = [];
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $plans[] = $row;
-    }
-}
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="FlexiGym Membership Plans">
-    <meta name="keywords" content="FlexiGym, unica, creative, html">
+    <meta name="description" content="TopGym Template">
+    <meta name="keywords" content="TopGym, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Membership Plans | FlexiGym</title>
+    <title>Classes | Template</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,700,900" rel="stylesheet">
@@ -38,112 +24,6 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" href="css/barfiller.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/plans.css" type="text/css">
-    <style>
-        .membership-item {
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            overflow: hidden;
-            position: relative;
-            background: #fff;
-        }
-        
-        .membership-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-        
-        .membership-title {
-            background: linear-gradient(to right, #f36100, #ff9d58);
-            padding: 25px 20px;
-            color: #fff;
-            text-align: center;
-        }
-        
-        .membership-title h4 {
-            color: #fff;
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .membership-price {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .membership-price h2 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 0;
-            color: #fff;
-        }
-        
-        .membership-desc {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .membership-benefits {
-            padding: 20px;
-            list-style: none;
-        }
-        
-        .membership-benefits li {
-            padding: 8px 0;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .membership-benefits .fa {
-            color: #f36100;
-            margin-right: 10px;
-            margin-top: 5px;
-        }
-        
-        .membership-btn {
-            display: block;
-            margin: 15px 20px 25px;
-            text-align: center;
-            border-radius: 30px;
-            transition: all 0.3s;
-        }
-        
-        .recommended-badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: #f36100;
-            color: white;
-            padding: 5px 15px;
-            font-size: 14px;
-            font-weight: bold;
-            transform: rotate(45deg) translate(15px, -15px);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        
-        .section-title h2 {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 3px;
-            background: #f36100;
-        }
-    </style>
 </head>
 
 <body>
@@ -152,86 +32,308 @@ if ($result->num_rows > 0) {
         <div class="loader"></div>
     </div>
     <!-- Header Section Begin -->
-
-    <?php include('includes/header.php'); ?>
-    <!-- Header End -->
-   
-    
-
-    <!-- Membership Plans Section Begin -->
-    <section class="membership-section spad">
+    <header class="header-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Choose Your Membership Plan</h2>
-                        <p>FlexiGym offers a variety of membership plans to fit your needs and goals.</p>
+                    <div class="main-menu">
+                        <div class="logo">
+                            <a href="./index.html">
+                                <img src="img/logo.gif" alt="">
+                            </a>
+                        </div>
+                        <nav class="mobile-menu">
+                            <ul>
+                                <li><a href="./index.php">Home</a></li>
+                                <li><a href="./about-us.php">About us</a></li>
+                                <li><a href="./Plans.php">PLANS</a></li>
+                                <li><a href="./Trainers.php">MY WORKOUTS</a></li>
+                                <li><a href="./Progress.php">PROGRESS</a></li>
+                                <li><a href="./contact.php">Contact</a></li>
+                                <li class="search-btn search-trigger"><i class="fa fa-search"></i></li>
+                                <!-- Show Logout if logged in, otherwise show Login -->
+                                <?php if (isset($_SESSION["user_id"])): ?>
+                                <li><a href="Login.php" class="mobile-menu">Logout</a></li>
+                            <?php else: ?>
+                                <li><a href="Login.html" class="mobile-menu">Login</a></li>
+                            <?php endif; ?>
+                            </ul>
+                        </nav>
+                        <div id="mobile-menu-wrap"></div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <?php 
-                $planCount = 0;
-                foreach ($plans as $plan): 
-                    $isRecommended = ($planCount === 1); // Mark the middle plan as recommended
-                    $planCount++;
-                ?>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="membership-item">
-                            <?php if ($isRecommended): ?>
-                                <span class="recommended-badge">POPULAR</span>
-                            <?php endif; ?>
-                            <div class="membership-title">
-                                <h4><?php echo htmlspecialchars($plan['plan_name']); ?></h4>
-                                <div class="membership-price">
-                                    <h2>LKR <?php echo number_format($plan['price'], 2); ?></h2>
-                                    <span>/ <?php echo $plan['duration_months']; ?> <?php echo $plan['duration_months'] > 1 ? 'months' : 'month'; ?></span>
-                                </div>
-                            </div>
-                            <div class="membership-desc">
-                                <p><?php echo htmlspecialchars($plan['description']); ?></p>
-                            </div>
-                            <ul class="membership-benefits">
-                                <?php 
-                                $benefitsArray = explode(',', $plan['benefits']);
-                                foreach ($benefitsArray as $benefit): 
-                                ?>
-                                    <li><i class="fa fa-check"></i> <?php echo htmlspecialchars(trim($benefit)); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                            <?php if ($user_role === "member"): ?>
-                                <a href="subscribe.php?plan_id=<?php echo $plan['plan_id']; ?>" class="primary-btn membership-btn">Subscribe Now</a>
-                            <?php elseif ($user_role === "guest"): ?>
-                                <a href="Login.php" class="primary-btn membership-btn">Login to Subscribe</a>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
+        </div>
+    </header>
+    <!-- Header End -->
+    <!-- Search Bar Begin -->
+    <section class="search-bar-wrap">
+        <span class="search-close"><i class="fa fa-close"></i></span>
+        <div class="search-bar-table">
+            <div class="search-bar-tablecell">
+                <div class="search-bar-inner">
+                    <h2>Search</h2>
+                    <form action="#">
+                        <input type="search" placeholder="Type Keywords">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
-    <!-- Membership Plans Section End -->
-
-    <!-- Membership Call To Action Begin -->
-    <section class="callto-section set-bg" data-setbg="img/callto-bg.jpg">
+    <!-- Search Bar End -->
+    <!-- Top Social Begin -->
+    <div class="top-social">
+        <div class="top-social-links">
+            <ul>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Top Social End -->
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-area set-bg" data-setbg="img/classes/classes-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <div class="callto-text">
-                        <h2>Join Today and Transform Your Body</h2>
-                        <p>Start your fitness journey with FlexiGym and see results in no time.</p>
-                        <a href="<?php echo $user_role === 'member' ? '#' : 'SignUp.php'; ?>" class="primary-btn callto-btn">
-                            <?php echo $user_role === 'member' ? 'View Your Profile' : 'Sign Up Now'; ?>
-                        </a>
+                    <div class="breadcrumb-content">
+                        <h2>Classes</h2>
+                        <div class="links">
+                            <a href="./index.html">Home</a>
+                            <a href="./classes.html" class="rt-breadcrumb">Classes</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Membership Call To Action End -->
-
+    <!-- Breadcrumb Section End -->
+    <!-- Classes Section Begin -->
+    <section class="classes-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <a href="MembershipPlans.php" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="single-classes">
+                            <div class="classes-img">
+                                <img src="img/classes/classes-1.jpg" alt="">
+                            </div>
+                            <div class="classes-text">
+                                <h5>Pilates</h5>
+                                <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
+                                    nulla pretium, vitae ornare leo.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <a href="MembershipPlans.php" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="single-classes">
+                            <div class="classes-img">
+                                <img src="img/classes/classes-2.jpg" alt="">
+                            </div>
+                                <div class="classes-text">
+                                <h5>Body Building</h5>
+                                <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
+                                    nulla pretium, vitae ornare leo.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <a href="MembershipPlans.php" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="single-classes">
+                            <div class="classes-img">
+                                <img src="img/classes/classes-3.jpg" alt="">
+                            </div>
+                            <div class="classes-text">
+                                <h5>Fitness</h5>
+                                <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
+                                    nulla pretium, vitae ornare leo.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <a href="MembershipPlans.php" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="single-classes">
+                            <div class="classes-img">
+                             <img src="img/classes/classes-4.jpg" alt="">
+                            </div>
+                            <div class="classes-text">
+                                <h5>Yoga</h5>
+                                <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
+                                    nulla pretium, vitae ornare leo.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <a href="MembershipPlans.php" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="single-classes">
+                            <div class="classes-img">
+                                <img src="img/classes/classes-5.jpg" alt="">
+                            </div>
+                            <div class="classes-text">
+                                <h5>Trx</h5>
+                                <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
+                                    nulla pretium, vitae ornare leo.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <a href="MembershipPlans.php" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="single-classes">
+                            <div class="classes-img">
+                                <img src="img/classes/classes-6.jpg" alt="">
+                            </div>
+                            <div class="classes-text">
+                                <h5>Spinning</h5>
+                                <p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
+                                    nulla pretium, vitae ornare leo.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Classes Section End -->
+    <!-- Fitness Plan Begin -->
+    <section class="fitness-section inside-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6">
+                    <div class="single-fitness-feature">
+                        <div class="fitness-number">
+                            <span>01</span>
+                        </div>
+                        <div class="fitness-text">
+                            <h4>Get fitted</h4>
+                            <p>Arcu a tellus pellentesque ultrices. Ut euismod luctus elit id eleifend. Donec semper
+                                massa a imperdiet mattis. </p>
+                        </div>
+                    </div>
+                    <div class="single-fitness-feature">
+                        <div class="fitness-number">
+                            <span>02</span>
+                        </div>
+                        <div class="fitness-text">
+                            <h4>Try Pilates</h4>
+                            <p>Ut euismod luctus elit id eleifend. Donec semper massa a imperdiet mattis. In vel mattis
+                                neque, nec ultricies lectus. </p>
+                        </div>
+                    </div>
+                    <div class="single-fitness-feature">
+                        <div class="fitness-number">
+                            <span>03</span>
+                        </div>
+                        <div class="fitness-text">
+                            <h4>Healthy Diet</h4>
+                            <p>Arcu a tellus pellentesque ultrices. Ut euismod luctus elit id eleifend. Donec semper
+                                massa a imperdiet mattis. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 offset-lg-2 text-md-right text-left">
+                    <div class="single-fitness-feature">
+                        <div class="fitness-number left-number">
+                            <span>04</span>
+                        </div>
+                        <div class="fitness-text left-text">
+                            <h4>Meditation</h4>
+                            <p>Arcu a tellus pellentesque ultrices. Ut euismod luctus elit id eleifend. Donec semper
+                                massa a imperdiet mattis. </p>
+                        </div>
+                    </div>
+                    <div class="single-fitness-feature">
+                        <div class="fitness-number left-number">
+                            <span>05</span>
+                        </div>
+                        <div class="fitness-text left-text">
+                            <h4>Diet Plan</h4>
+                            <p>Ut euismod luctus elit id eleifend. Donec semper massa a imperdiet mattis. In vel mattis
+                                neque, nec ultricies lectus. </p>
+                        </div>
+                    </div>
+                    <div class="single-fitness-feature">
+                        <div class="fitness-number left-number">
+                            <span>06</span>
+                        </div>
+                        <div class="fitness-text left-text">
+                            <h4>Grow Muscles</h4>
+                            <p>Arcu a tellus pellentesque ultrices. Ut euismod luctus elit id eleifend. Donec semper
+                                massa a imperdiet mattis. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fitness Plan End -->
+    <!-- Classes Call To Action Section -->
+    <section class="classes-callto-section set-bg" data-setbg="img/classes/classes-callto-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="classes-callto-text">
+                        <span>Join our gym now!</span>
+                        <h2>25% Discount</h2>
+                        <p>Arcu a tellus pellentesque ultrices. Ut euismod luctus elit id eleifend. Donec semper massa a
+                            imperdiet mattis. </p>
+                        <a href="#" class="primary-btn">Join</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Classes Call To Action End -->
     <!-- Footer Section Begin -->
-    <?php include('includes/footer.php'); ?>
+    <footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-content">
+                        <div class="footer-logo">
+                            <a href="#"><img src="img/logo.png" alt=""></a>
+                        </div>
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="./home.html">Home</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Classes</a></li>
+                                <li><a href="#">Instructors</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="your Email">
+                                <button type="submit">Sign Up</button>
+                            </form>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                        </div>
+                        <div class="footer-icon-img">
+                            <img src="img/footer-icon.png" alt="">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
