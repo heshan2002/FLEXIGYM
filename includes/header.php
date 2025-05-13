@@ -21,9 +21,9 @@
 
                                  <!-- Show Logout if logged in, otherwise show Login -->
                                  <?php if (isset($_SESSION["user_id"])): ?>
-                                 <li><a href="php/logout.php" class="mobile-menu">Logout</a></li>
+                                 <li><a href="login.php" class="mobile-menu">Logout</a></li>
                              <?php else: ?>
-                                 <li><a href="Login.html" class="mobile-menu">Login</a></li>
+                                 <li><a href="login.php" class="mobile-menu">Login</a></li>
                              <?php endif; ?>
                             </ul>
                         </nav>
