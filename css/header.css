@@ -1,0 +1,53 @@
+/* Header styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.flexigym-header {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 0;
+  position: relative;
+  z-index: -1;
+  position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.flexigym-nav {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexigym-nav-left,
+.flexigym-nav-right {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.flexigym-nav-left li a,
+.flexigym-nav-right li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.flexigym-nav-left li a:hover,
+.flexigym-nav-right li a:hover {
+  color: #f39c12;
+}
+
+.flexigym-nav-right i {
+  font-size: 16px;
+}
